@@ -1,12 +1,12 @@
-package gameplay;
+package gamesetup;
 
 import java.util.ArrayList;
 
-public class CardDefinition {
+public class Cards {
 
 	private ArrayList<String> cards;
 
-	public CardDefinition(ArrayList<String> cards) {
+	public Cards(ArrayList<String> cards) {
 		this.setCards(cards);
 	}
 

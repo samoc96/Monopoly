@@ -1,16 +1,29 @@
-package gameplay;
+package gamesetup;
+
+import java.util.ArrayList;
+
+import gameplay.Dice;
 
 public class Player {
 	private String name;
 	private int money;
-	private String token;
+	private int token;
 	private int position;
-
-	public Player(String n, String t) {
+	private boolean hasJailCard;
+	private int numOfDoubles;
+	private ArrayList <TitleDeeds> myProperties; 
+	public static final int totalSpaces = 40;
+	
+	public Player(String n, int t) {
 		this.name = n;
 		this.token = t;
+		this.hasJailCard=false;
+		this.position=0;
+		this.myProperties= new ArrayList<TitleDeeds>();
+		this.numOfDoubles=0;
+		this.money=1500;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -19,20 +32,64 @@ public class Player {
 		return money;
 	}
 
-	public void setMoney(int money) {
-		this.money = money;
-	}
-
-	public String getToken() {
+	public int getToken() {
 		return token;
 	}
 
+	public void pay(int amount){
+		money-=amount;
+	}
+
+	public void receive(int amount){
+		money+=amount;
+	}
+	
 	public int getPosition() {
 		return position;
 	}
-
+	
+	public int movePosition(int numOfSpaces)
+	{
+		int new_position = getPosition()+numOfSpaces;
+		return new_position;
+	}
+	
 	public void setPosition(int position) {
 		this.position = position;
+	}
+	
+	public void setHasJailCard(boolean hasJailCard) {
+		this.hasJailCard = hasJailCard;
+	}
+	
+	public boolean getHasJailCard() {
+		return hasJailCard;
+	}
+	
+	public void payPlayer(Player p, int amount){
+		pay(amount);
+		p.receive(amount);
+	}
+	
+	public void newProperty(TitleDeeds t){
+		myProperties.add(t);
+	}
+	
+	public boolean threeDoubles(Dice dice){
+		if(dice.die1==dice.die2){
+			numOfDoubles++;
+		}
+		if(numOfDoubles>=3){
+			numOfDoubles=0;
+			return true;
+		}
+		else {
+			return false;
+		} 
+	}
+
+	public ArrayList <TitleDeeds> getProperties() {
+		return myProperties;
 	}
 
 }
