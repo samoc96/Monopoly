@@ -11,7 +11,7 @@ public class Player {
 	private int position;
 	private boolean hasJailCard;
 	private int numOfDoubles;
-	private ArrayList <TitleDeeds> myProperties; 
+	private ArrayList <Properties> myProperties; 
 	public static final int totalSpaces = 40;
 	
 	public Player(String n, int t) {
@@ -19,7 +19,7 @@ public class Player {
 		this.token = t;
 		this.hasJailCard=false;
 		this.position=0;
-		this.myProperties= new ArrayList<TitleDeeds>();
+		this.myProperties= new ArrayList<Properties>();
 		this.numOfDoubles=0;
 		this.money=1500;
 	}
@@ -71,8 +71,8 @@ public class Player {
 		p.receive(amount);
 	}
 	
-	public void newProperty(TitleDeeds t){
-		myProperties.add(t);
+	public void newProperty(Properties p){
+		myProperties.add(p);
 	}
 	
 	public boolean threeDoubles(Dice dice){
@@ -88,7 +88,7 @@ public class Player {
 		} 
 	}
 
-	public ArrayList <TitleDeeds> getProperties() {
+	public ArrayList <Properties> getProperties() {
 		return myProperties;
 	}
 

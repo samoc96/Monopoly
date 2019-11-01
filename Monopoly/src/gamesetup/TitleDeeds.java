@@ -1,30 +1,74 @@
 package gamesetup;
 
 public class TitleDeeds extends Properties{
+ 
 	private int housePrice;
-	private int hotelPrice;
+	private int rentPrice;
+	private int rentPrice1;
+	private int rentPrice2;
+	private int rentPrice3;
+	private int rentPrice4;
+	private int rentPriceH;
+	private int numOfHouses;
+	private int numForMono;
 	
-	public TitleDeeds(int b, int r, int i,String n, int house, int hotel){
-		super(b,r,i,n);
-		this.setHousePrice(house);
-		this.setHotelPrice(hotel);
+	public TitleDeeds(String name, String propType, int price, int mortgage, 
+			int housePrice,int rentPrice,int rentPrice1,int rentPrice2,int rentPrice3,int rentPrice4,int rentPriceH,int numForMono){
+		super(name,propType,price,mortgage);
+		this.housePrice=housePrice;
+		this.rentPrice=rentPrice;
+		this.rentPrice1=rentPrice1;
+		this.rentPrice2=rentPrice2;
+		this.rentPrice3=rentPrice3;
+		this.rentPrice4=rentPrice4;
+		numOfHouses=0;
+		this.numForMono=numForMono;
 	}
 
-	public void setHousePrice(int housePrice) {
-		this.housePrice = housePrice;
-	}
-
+	
 	public int getHousePrice() {
 		return housePrice;
 	}
 
-	public void setHotelPrice(int hotelPrice) {
-		this.hotelPrice = hotelPrice;
+	public void addHouse()
+	{
+		if(numOfHouses <5)
+		{
+			if (numOfHouses == 0)
+			rentPrice = rentPrice1;
+			if (numOfHouses == 1)
+			rentPrice = rentPrice2;
+			if (numOfHouses == 2)
+			rentPrice = rentPrice3;
+			if (numOfHouses == 3)
+				rentPrice = rentPrice4;
+			if (numOfHouses == 4)
+			rentPrice = rentPriceH;
+			numOfHouses++;
+			
+			getOwner().pay(housePrice);
+		}
 	}
 
-	public int getHotelPrice() {
-		return hotelPrice;
+	public int getRent() {
+		return rentPrice;
 	}
-	
+
+	public int getRentPrice() {
+		return rentPrice;
+	}
+
+	public Boolean isMonopoly()
+	{
+		if(!(getOwner()==null))
+		{
+			int count = 0;
+			for(Properties p : getOwner().getProperties())
+				if (p.getPropType().equals(getPropType()))
+					count ++;
+			return (count == numForMono);
+		}
+		else return false;
+	}
 	
 }

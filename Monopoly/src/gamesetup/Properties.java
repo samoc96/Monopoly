@@ -1,42 +1,42 @@
 package gamesetup;
 
-public class Properties {
-	private int buyPrice;
-	private int rentPrice;
-	private int owner;
-	private int index;
+public abstract class Properties {
 	private String name;
+	private String propType;
+	private int price;
+	private int mortgage;
+	private Player owner;
+
 	
-	public Properties(int b, int r, int i, String n){
-		this.index = i;
-		this.rentPrice=r;
-		this.buyPrice=b;
-		this.name = n;
+	public Properties(String name, String propType, int price, int mortgage){
+		this.name = name;
+		this.propType=propType;
+		this.price=price;
+		this.mortgage=mortgage;
+		owner = null;
+	}
+	 
+	public int getPrice() {
+		return price;
 	}
 	
-	public enum Color {PINK, LIGHTBLUE, RED, YELLOW, GREEN, BROWN, ORANGE, DARKBLUE}; 
-	
-	public int getBuyPrice() {
-		return buyPrice;
+	public int getMortgage() {
+		return mortgage;
 	}
 	
-	public int getRentPrice() {
-		return rentPrice;
-	}
+	public abstract int getRent() ;
 	
-	
-	public int getIndex() {
-		return index;
+	public String getPropType() {
+		return propType;
 	}
 	
 	public void setOwner(Player player) {
-		this.owner = player.getToken();	
+		owner = player;	
 	}
 	
-	public int getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
-
 
 	public String getName() {
 		return name;
