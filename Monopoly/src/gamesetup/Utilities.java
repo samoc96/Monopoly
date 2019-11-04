@@ -4,7 +4,7 @@ import gameplay.Dice;
 
 public class Utilities extends Properties{
 	
-	private int noOfUtilities;
+	private int numOfUtilities;
 	private int rentPrice;
 
 	
@@ -12,13 +12,13 @@ public class Utilities extends Properties{
 		super(name,propType,price,mortgage);
 	}
 	
-	public int getNoOfUtilities() {
-		noOfUtilities = 0;
+	public int getNumOfUtilities() {
+		numOfUtilities = 0;
 		for(Properties p : getOwner().getProperties())
 			if (p.getPropType().equals(getPropType()))
-				noOfUtilities ++;
+				numOfUtilities ++;
 	
-		return noOfUtilities;
+		return numOfUtilities;
 	}
 
 	public int getRent() {
