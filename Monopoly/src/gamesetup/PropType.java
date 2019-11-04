@@ -1,12 +1,12 @@
 package gamesetup;
 
-public enum Color {
-	PINK, 
+public enum PropType {
+	PURPLE, 
 	LIGHTBLUE, 
+	PINK,
 	RED, 
 	YELLOW, 
 	GREEN, 
-	BROWN, 
 	ORANGE, 
 	DARKBLUE,
 	RAILROAD,

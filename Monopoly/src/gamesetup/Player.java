@@ -13,6 +13,7 @@ public class Player {
 	private int numOfDoubles;
 	private ArrayList <Properties> myProperties; 
 	public static final int totalSpaces = 40;
+	private int numOfProps;
 	
 	public Player(String n, int t) {
 		this.name = n;
@@ -22,6 +23,7 @@ public class Player {
 		this.myProperties= new ArrayList<Properties>();
 		this.numOfDoubles=0;
 		this.money=1500;
+		numOfProps=0;
 	}
 	
 	public String getName() {
@@ -73,6 +75,7 @@ public class Player {
 	
 	public void newProperty(Properties p){
 		myProperties.add(p);
+		numOfProps++;
 	}
 	
 	public boolean threeDoubles(Dice dice){
@@ -90,6 +93,10 @@ public class Player {
 
 	public ArrayList <Properties> getProperties() {
 		return myProperties;
+	}
+
+	public int getNumOfProps() {
+		return numOfProps;
 	}
 
 }

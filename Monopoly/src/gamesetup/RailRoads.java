@@ -2,9 +2,8 @@ package gamesetup;
 
 public class RailRoads extends Properties{
 	private int numOfRailRoads;
-	private int rentPrice;
 	
-	public RailRoads(String name, String propType, int price, int mortgage){
+	public RailRoads(String name, PropType propType, int price, int mortgage){
 		super(name,propType,price,mortgage);
 	}
 
@@ -17,8 +16,9 @@ public class RailRoads extends Properties{
 		return numOfRailRoads;
 	}
 	
-	public int getRent() {
-		int count = 0;
+	public int setRentPrice() {
+		
+		int count = 0, rentPrice = 0;
 		for(Properties p : getOwner().getProperties())
 			if (p.getPropType().equals(getPropType()))
 				count ++;

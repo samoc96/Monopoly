@@ -12,7 +12,7 @@ public class TitleDeeds extends Properties{
 	private int numOfHouses;
 	private int numForMono;
 	
-	public TitleDeeds(String name, String propType, int price, int mortgage, 
+	public TitleDeeds(String name, PropType propType, int price, int mortgage, 
 			int housePrice,int rentPrice,int rentPrice1,int rentPrice2,int rentPrice3,int rentPrice4,int rentPriceH,int numForMono){
 		super(name,propType,price,mortgage);
 		this.housePrice=housePrice;
@@ -25,6 +25,9 @@ public class TitleDeeds extends Properties{
 		this.numForMono=numForMono;
 	}
 
+	public int getNumOfHouses() {
+		return numOfHouses;
+	}
 	
 	public int getHousePrice() {
 		return housePrice;
@@ -50,15 +53,11 @@ public class TitleDeeds extends Properties{
 		}
 	}
 
-	public int getRent() {
+	public int setRentPrice() {
 		return rentPrice;
 	}
 
-	public int getRentPrice() {
-		return rentPrice;
-	}
-
-	public Boolean isMonopoly()
+	public boolean isMonopoly()
 	{
 		if(!(getOwner()==null))
 		{

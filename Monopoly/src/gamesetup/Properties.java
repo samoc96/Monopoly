@@ -2,13 +2,14 @@ package gamesetup;
 
 public abstract class Properties {
 	private String name;
-	private String propType;
+	private PropType propType;
 	private int price;
 	private int mortgage;
 	private Player owner;
+	private int rentPrice;
 
 	
-	public Properties(String name, String propType, int price, int mortgage){
+	public Properties(String name, PropType propType, int price, int mortgage){
 		this.name = name;
 		this.propType=propType;
 		this.price=price;
@@ -24,9 +25,13 @@ public abstract class Properties {
 		return mortgage;
 	}
 	
-	public abstract int getRent() ;
+	public abstract int setRentPrice() ;
 	
-	public String getPropType() {
+	public int getRentPrice() {
+		return rentPrice;
+	}
+
+	public PropType getPropType() {
 		return propType;
 	}
 	

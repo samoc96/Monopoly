@@ -5,10 +5,10 @@ import gameplay.Dice;
 public class Utilities extends Properties{
 	
 	private int numOfUtilities;
-	private int rentPrice;
+	
 
 	
-	public Utilities(String name, String propType, int price, int mortgage){
+	public Utilities(String name, PropType propType, int price, int mortgage){
 		super(name,propType,price,mortgage);
 	}
 	
@@ -21,9 +21,9 @@ public class Utilities extends Properties{
 		return numOfUtilities;
 	}
 
-	public int getRent() {
+	public int setRentPrice() {
 		Dice dice = new Dice();
-		int count = 0;
+		int count = 0, rentPrice = 0;
 		for(Properties p : getOwner().getProperties())
 			if (p.getPropType().equals(getPropType()))
 				count ++;
@@ -32,6 +32,5 @@ public class Utilities extends Properties{
 		if(count==2)
 			rentPrice = 10*(dice.die1+dice.die2);
 		return rentPrice;
-	}
-	
+	}	
 }
