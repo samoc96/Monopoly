@@ -2,6 +2,11 @@ package cardsetup;
 
 import java.util.ArrayList;
 
+import playersetup.Player;
+import propertysetup.DefineProperties;
+import propertysetup.Properties;
+import propertysetup.TitleDeeds;
+
 import gameplay.Dice;
 
 public class CardDef {
