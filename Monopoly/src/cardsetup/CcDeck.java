@@ -1,4 +1,5 @@
-package gamesetup;
+package cardsetup;
+
 
 import java.util.ArrayList;
 import java.util.Collections;

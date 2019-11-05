@@ -1,4 +1,4 @@
-package gamesetup;
+package propertysetup;
 
 public class TitleDeeds extends Properties{
  
@@ -10,6 +10,7 @@ public class TitleDeeds extends Properties{
 	private int rentPrice4;
 	private int rentPriceH;
 	private int numOfHouses;
+	private int numOfHotels;
 	private int numForMono;
 	
 	public TitleDeeds(String name, PropType propType, int price, int mortgage, 
@@ -22,6 +23,7 @@ public class TitleDeeds extends Properties{
 		this.rentPrice3=rentPrice3;
 		this.rentPrice4=rentPrice4;
 		numOfHouses=0;
+		numOfHotels=0;
 		this.numForMono=numForMono;
 	}
 
@@ -29,26 +31,33 @@ public class TitleDeeds extends Properties{
 		return numOfHouses;
 	}
 	
+	public int getNumOfHotels() {
+		return numOfHotels;
+	}
 	public int getHousePrice() {
 		return housePrice;
 	}
 
 	public void addHouse()
 	{
-		if(numOfHouses <5)
+		if(numOfHouses <5 && numOfHotels==0)
 		{
 			if (numOfHouses == 0)
 			rentPrice = rentPrice1;
+			numOfHouses++;
 			if (numOfHouses == 1)
 			rentPrice = rentPrice2;
+			numOfHouses++;
 			if (numOfHouses == 2)
 			rentPrice = rentPrice3;
+			numOfHouses++;
 			if (numOfHouses == 3)
-				rentPrice = rentPrice4;
+			rentPrice = rentPrice4;
+			numOfHouses++;
 			if (numOfHouses == 4)
 			rentPrice = rentPriceH;
-			numOfHouses++;
-			
+			numOfHouses=0;
+			numOfHotels=1;		
 			getOwner().pay(housePrice);
 		}
 	}

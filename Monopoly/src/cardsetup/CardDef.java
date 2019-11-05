@@ -1,4 +1,4 @@
-package gamesetup;
+package cardsetup;
 
 import java.util.ArrayList;
 
@@ -86,17 +86,12 @@ public class CardDef {
 				break;
 				
 			case PAY_PER_HH:
-				int amount=0, numOfHH=0;
+				int amount=0;
 				ArrayList<Properties> props = p.getProperties();
 				
 				for (int i=1; i<=p.getNumOfProps(); i++) {		
-					numOfHH = ((TitleDeeds) props.get(i)).getNumOfHouses();
-					if(numOfHH==5) {
-						amount+=(cardTypeVariable1*4)+cardTypeVariable2;	
-					}
-					else {
-						amount+=(cardTypeVariable1*numOfHH);
-					}
+					amount+=cardTypeVariable1*((TitleDeeds) props.get(i)).getNumOfHouses();	
+					amount+=cardTypeVariable2*((TitleDeeds) props.get(i)).getNumOfHotels();		
 				}
 				p.pay(amount);
 				

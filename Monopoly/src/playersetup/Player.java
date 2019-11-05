@@ -1,6 +1,8 @@
-package gamesetup;
+package playersetup;
 
 import java.util.ArrayList;
+
+import propertysetup.Properties;
 
 import gameplay.Dice;
 
@@ -12,18 +14,20 @@ public class Player {
 	private boolean hasJailCard;
 	private int numOfDoubles;
 	private ArrayList <Properties> myProperties; 
-	public static final int totalSpaces = 40;
 	private int numOfProps;
+	private boolean isInJail;
 	
 	public Player(String n, int t) {
 		this.name = n;
 		this.token = t;
-		this.hasJailCard=false;
-		this.position=0;
-		this.myProperties= new ArrayList<Properties>();
-		this.numOfDoubles=0;
-		this.money=1500;
+		hasJailCard=false;
+		position=0;
+		myProperties= new ArrayList<Properties>();
+		numOfDoubles=0;
+		money=1500;
 		numOfProps=0;
+		isInJail=false;
+		
 	}
 	
 	public String getName() {
@@ -78,17 +82,15 @@ public class Player {
 		numOfProps++;
 	}
 	
-	public boolean threeDoubles(Dice dice){
+	public void threeDoubles(Dice dice){
 		if(dice.die1==dice.die2){
 			numOfDoubles++;
 		}
-		if(numOfDoubles>=3){
+		if(numOfDoubles==3){
+			isInJail=true;
+			position=10;
 			numOfDoubles=0;
-			return true;
 		}
-		else {
-			return false;
-		} 
 	}
 
 	public ArrayList <Properties> getProperties() {
@@ -97,6 +99,10 @@ public class Player {
 
 	public int getNumOfProps() {
 		return numOfProps;
+	}
+
+	public boolean getIsInJail() {
+		return isInJail;
 	}
 
 }

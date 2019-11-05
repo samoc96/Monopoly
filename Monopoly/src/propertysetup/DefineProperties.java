@@ -1,4 +1,7 @@
-package gamesetup;
+package propertysetup;
+
+import gamesetup.RailRoads;
+import gamesetup.Utilities;
 
 import java.util.HashMap;
 

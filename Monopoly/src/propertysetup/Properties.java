@@ -1,4 +1,6 @@
-package gamesetup;
+package propertysetup;
+
+import playersetup.Player;
 
 public abstract class Properties {
 	private String name;

@@ -1,4 +1,5 @@
-package gamesetup;
+package propertysetup;
+
 
 public class RailRoads extends Properties{
 	private int numOfRailRoads;

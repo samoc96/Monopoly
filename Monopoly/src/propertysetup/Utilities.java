@@ -1,4 +1,4 @@
-package gamesetup;
+package propertysetup;
 
 import gameplay.Dice;
 

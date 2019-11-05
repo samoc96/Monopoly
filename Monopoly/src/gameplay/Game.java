@@ -1,6 +1,6 @@
 package gameplay;
 import java.util.ArrayList;
-import gamesetup.Player;
+import playersetup.Player;
 
 public class Game {
 	
@@ -11,4 +11,7 @@ public class Game {
 	{
 		numberOfPlayers = num;
 	}
+	
+	
+	
 }

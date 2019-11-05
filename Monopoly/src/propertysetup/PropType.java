@@ -1,4 +1,4 @@
-package gamesetup;
+package propertysetup;
 
 public enum PropType {
 	PURPLE, 

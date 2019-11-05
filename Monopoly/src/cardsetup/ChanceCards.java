@@ -1,4 +1,4 @@
-package gamesetup;
+package cardsetup;
 
 public class ChanceCards {
 	
