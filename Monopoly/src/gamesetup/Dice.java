@@ -1,4 +1,4 @@
-package gameplay;
+package gamesetup;
 
 public class Dice {
     public int die1;   // Number showing on the first die.

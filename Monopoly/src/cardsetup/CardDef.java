@@ -7,7 +7,7 @@ import propertysetup.DefineProperties;
 import propertysetup.Properties;
 import propertysetup.TitleDeeds;
 
-import gameplay.Dice;
+import gamesetup.Dice;
 
 public class CardDef {
 	private String message;
@@ -22,10 +22,6 @@ public class CardDef {
 		this.cardTypeVariable1=cardTypeVariable1;
 		this.cardTypeVariable2=cardTypeVariable2;
 		owner = null;
-	}
-
-	public String getMessage() {
-		return message;
 	}
 
 	public CardType getCardType() {

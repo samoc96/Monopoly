@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import propertysetup.Properties;
 
-import gameplay.Dice;
+import gamesetup.Dice;
 
 public class Player {
 	private String name;
@@ -16,6 +16,7 @@ public class Player {
 	private ArrayList <Properties> myProperties; 
 	private int numOfProps;
 	private boolean isInJail;
+	private boolean isBankrupt;
 	
 	public Player(String n, int t) {
 		this.name = n;
@@ -27,7 +28,7 @@ public class Player {
 		money=1500;
 		numOfProps=0;
 		isInJail=false;
-		
+		isBankrupt=false;
 	}
 	
 	public String getName() {
@@ -64,8 +65,8 @@ public class Player {
 		this.position = position;
 	}
 	
-	public void setHasJailCard(boolean hasJailCard) {
-		this.hasJailCard = hasJailCard;
+	public void setHasJailCard(boolean b) {
+		hasJailCard = b;
 	}
 	
 	public boolean getHasJailCard() {
@@ -103,6 +104,16 @@ public class Player {
 
 	public boolean getIsInJail() {
 		return isInJail;
+	}
+
+	public void setBankrupt(boolean isBankrupt) {
+		if(money<0){
+			
+		}
+	}
+
+	public boolean isBankrupt() {
+		return isBankrupt;
 	}
 
 }

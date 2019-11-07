@@ -1,6 +1,6 @@
 package propertysetup;
 
-import gameplay.Dice;
+import gamesetup.Dice;
 
 public class Utilities extends Properties{
 	
@@ -23,13 +23,10 @@ public class Utilities extends Properties{
 
 	public int setRentPrice() {
 		Dice dice = new Dice();
-		int count = 0, rentPrice = 0;
-		for(Properties p : getOwner().getProperties())
-			if (p.getPropType().equals(getPropType()))
-				count ++;
-		if(count==1)
+		int rentPrice = 0;
+		if(numOfUtilities==1)
 			rentPrice = 4*(dice.die1+dice.die2);
-		if(count==2)
+		if(numOfUtilities==2)
 			rentPrice = 10*(dice.die1+dice.die2);
 		return rentPrice;
 	}	

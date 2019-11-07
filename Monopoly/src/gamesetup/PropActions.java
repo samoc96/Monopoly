@@ -30,9 +30,7 @@ public class PropActions {
 	}
 	
 	public void payRent(){
-		p.pay(prop.getRentPrice());
-		Player owner = prop.getOwner();
-		owner.receive(prop.getRentPrice());
+		p.payPlayer(prop.getOwner(), prop.getRentPrice());
 	}
 	
 	

@@ -19,15 +19,12 @@ public class RailRoads extends Properties{
 	
 	public int setRentPrice() {
 		
-		int count = 0, rentPrice = 0;
-		for(Properties p : getOwner().getProperties())
-			if (p.getPropType().equals(getPropType()))
-				count ++;
-		if (count == 1)
+		int rentPrice = 0;
+		if (numOfRailRoads == 1)
 			rentPrice= 25;
-		else if (count == 2)
+		else if (numOfRailRoads == 2)
 			rentPrice= 50;
-		else if (count == 3)
+		else if (numOfRailRoads == 3)
 			rentPrice= 100;
 		else
 			rentPrice = 200;
