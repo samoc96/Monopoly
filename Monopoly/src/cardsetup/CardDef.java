@@ -1,6 +1,7 @@
 package cardsetup;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import playersetup.Player;
 import propertysetup.DefineProperties;
@@ -22,6 +23,7 @@ public class CardDef {
 		this.cardTypeVariable1=cardTypeVariable1;
 		this.cardTypeVariable2=cardTypeVariable2;
 		owner = null;
+		DefineProperties.setproperties();
 	}
 
 	public CardType getCardType() {
@@ -36,18 +38,11 @@ public class CardDef {
 		return owner;
 	}
 
-	public int getCardTypeVariable1() {
-		return cardTypeVariable1;
-	}
-	
-	public int getCardTypeVariable2() {
-		return cardTypeVariable2;
-	}
-	
-	public void action() {
-		Player p = getOwner(); 
-		DefineProperties d = new DefineProperties();
+	public void action(Player p) {
+		HashMap<Integer, Properties> d = DefineProperties.getHashMap();
+		
 		Dice dice = new Dice();
+
 		switch(cardType) {
 			case MOVE:
 				p.movePosition(cardTypeVariable1);
@@ -67,6 +62,7 @@ public class CardDef {
 				
 			case GOJ:
 				p.setHasJailCard(true);
+				this.owner = p;
 				break;
 				
 			case GTJ:
@@ -109,6 +105,7 @@ public class CardDef {
 					p.setPosition(28);
 					posU=28;
 				}
+				
 				if(d.getHashMap().get(posU).getOwner()!=null&&d.getHashMap().get(posU).getOwner()!=p) {
 					dice.roll();
 					p.pay((dice.die1+dice.die2)*10);

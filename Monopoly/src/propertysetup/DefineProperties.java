@@ -3,6 +3,11 @@ package propertysetup;
 import java.util.HashMap;
 
 public class DefineProperties {
+	
+	private static HashMap<Integer, Properties> hs = new HashMap<Integer, Properties>();
+}
+	
+	public static void setproperties(){
 	Properties med = new TitleDeeds("Mediterranean Avenue", PropType.PURPLE, 60, 30, 50, 2, 10, 30, 90, 160, 250, 2);
 	Properties bal = new TitleDeeds("Baltic Avenue", PropType.PURPLE, 60, 30, 50, 4, 20, 60, 180, 320, 450, 2);
 
@@ -42,40 +47,39 @@ public class DefineProperties {
 	Properties ele = new Utilities("Electric Company", PropType.UTILITY, 150, 75);
 	Properties wat = new Utilities("Water Works", PropType.UTILITY, 150, 75);
 	
-	public HashMap<Integer, Properties> getHashMap(){
-		
-		HashMap<Integer, Properties> hs = new HashMap<Integer, Properties>();
-		
-		hs.put(1, med);
-		hs.put(3, bal);
-		hs.put(6, ori);
-		hs.put(8, ver);
-		hs.put(9, con);
-		hs.put(11, cha);
-		hs.put(13, sta);
-		hs.put(14, vir);
-		hs.put(16, jam);
-		hs.put(18, ten);
-		hs.put(19, yor);
-		hs.put(21, ken);
-		hs.put(23, ind);
-		hs.put(24, ill);
-		hs.put(26, atl);
-		hs.put(27, ven);
-		hs.put(29, mar);
-		hs.put(31, pac);
-		hs.put(32, car);
-		hs.put(34, pen);
-		hs.put(37, par);
-		hs.put(39, boa);
-		
-		hs.put(5, rea);
-		hs.put(15, penn);
-		hs.put(25, bo);
-		hs.put(35, sho);
-		
-		hs.put(12, ele);
-		hs.put(28, wat);
+	hs.put(1, med);
+	hs.put(3, bal);
+	hs.put(6, ori);
+	hs.put(8, ver);
+	hs.put(9, con);
+	hs.put(11, cha);
+	hs.put(13, sta);
+	hs.put(14, vir);
+	hs.put(16, jam);
+	hs.put(18, ten);
+	hs.put(19, yor);
+	hs.put(21, ken);
+	hs.put(23, ind);
+	hs.put(24, ill);
+	hs.put(26, atl);
+	hs.put(27, ven);
+	hs.put(29, mar);
+	hs.put(31, pac);
+	hs.put(32, car);
+	hs.put(34, pen);
+	hs.put(37, par);
+	hs.put(39, boa);
+	hs.put(5, rea);
+	hs.put(15, penn);
+	hs.put(25, bo);
+	hs.put(35, sho);
+	hs.put(12, ele);
+	hs.put(28, wat);
+	}
+	
+	
+	public static HashMap<Integer, Properties> getHashMap(){
+
 		return hs;
 	}
 	
