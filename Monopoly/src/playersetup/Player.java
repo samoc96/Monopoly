@@ -9,7 +9,7 @@ import gamesetup.Dice;
 public class Player {
 	private String name;
 	private int money;
-	private int token;
+	private Token token;
 	private int position;
 	private boolean hasJailCard;
 	private int numOfDoubles;
@@ -18,7 +18,7 @@ public class Player {
 	private boolean isInJail;
 	private boolean isBankrupt;
 	
-	public Player(String n, int t) {
+	public Player(String n, Token t) {
 		this.name = n;
 		this.token = t;
 		hasJailCard=false;
@@ -39,7 +39,7 @@ public class Player {
 		return money;
 	}
 
-	public int getToken() {
+	public Token getToken() {
 		return token;
 	}
 
@@ -47,8 +47,8 @@ public class Player {
 		money-=amount;
 	}
 
-	public void receive(int amount){
-		money+=amount;
+	public void receive(double d){
+		money+=d;
 	}
 	
 	public int getPosition() {
@@ -57,7 +57,13 @@ public class Player {
 	
 	public int movePosition(int numOfSpaces)
 	{
-		int new_position = getPosition()+numOfSpaces;
+		int new_position=0;
+		if(numOfSpaces<0 && -position>numOfSpaces) {
+			new_position += 40+position+numOfSpaces;
+		}
+		else {
+		new_position = position+numOfSpaces;
+		}
 		return new_position;
 	}
 	
@@ -106,10 +112,12 @@ public class Player {
 		return isInJail;
 	}
 
+	public void setIsInJail(boolean b) {
+		isInJail = b;
+	}
+	
 	public void setBankrupt(boolean isBankrupt) {
-		if(money<0){
-			
-		}
+		this.isBankrupt = isBankrupt;
 	}
 
 	public boolean isBankrupt() {

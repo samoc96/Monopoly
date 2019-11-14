@@ -25,7 +25,9 @@ public class CardDef {
 		owner = null;
 		DefineProperties.setproperties();
 	}
-
+	
+	
+	
 	public CardType getCardType() {
 		return cardType;
 	}
@@ -42,7 +44,7 @@ public class CardDef {
 		HashMap<Integer, Properties> d = DefineProperties.getHashMap();
 		
 		Dice dice = new Dice();
-
+		
 		switch(cardType) {
 			case MOVE:
 				p.movePosition(cardTypeVariable1);
@@ -106,7 +108,7 @@ public class CardDef {
 					posU=28;
 				}
 				
-				if(d.getHashMap().get(posU).getOwner()!=null&&d.getHashMap().get(posU).getOwner()!=p) {
+				if(d.get(posU).getOwner()!=null&&d.get(posU).getOwner()!=p) {
 					dice.roll();
 					p.pay((dice.die1+dice.die2)*10);
 					getOwner().receive((dice.die1+dice.die2)*10);
@@ -132,12 +134,18 @@ public class CardDef {
 					p.setPosition(35);
 					posR=35;
 				}
-				if(d.getHashMap().get(posR).getOwner()!=null&&d.getHashMap().get(posR).getOwner()!=p) {
+				if(d.get(posR).getOwner()!=null&&d.get(posR).getOwner()!=p) {
 					
-					p.pay(d.getHashMap().get(posR).getRentPrice()*2);
-					getOwner().receive(d.getHashMap().get(posR).getRentPrice()*2);
+					p.pay(d.get(posR).getRentPrice()*2);
+					getOwner().receive(d.get(posR).getRentPrice()*2);
 				}
 				break;		
 		}
+	}
+
+
+
+	public String getMessage() {
+		return message;
 	}
 }
