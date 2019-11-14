@@ -20,7 +20,6 @@ public class LocationAction {
 		
 		int pos = p.getPosition();
 		CcDeck cc = new CcDeck();
-		deck = d.getHashMap();
 		ChanceDeck c = new ChanceDeck();
 		switch (pos){
 		
