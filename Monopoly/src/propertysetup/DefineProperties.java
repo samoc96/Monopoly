@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class DefineProperties {
 	
 	private static HashMap<Integer, Properties> hs = new HashMap<Integer, Properties>();
-}
+
 	
 	public static void setproperties(){
 	Properties med = new TitleDeeds("Mediterranean Avenue", PropType.PURPLE, 60, 30, 50, 2, 10, 30, 90, 160, 250, 2);

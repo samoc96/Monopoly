@@ -19,7 +19,7 @@ public class PropActions {
 	}
 	
 	public void mortgageProp(){
-		p.receive(prop.getMortgage());
+		p.receive(prop.getMortgage()*0.5);
 		prop.setOwner(null);
 	}
 	

@@ -17,8 +17,6 @@ public class Turn {
 		d.roll();
 		p.movePosition(d.die1+d.die2);
 		la.action();
-	}	
-	
-	
-	
+
+	}		
 }
