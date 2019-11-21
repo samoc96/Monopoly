@@ -4,7 +4,6 @@ package cardsetup;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import playersetup.Player;
 
 public class CcDeck {
 	CommunityChestCards c = new CommunityChestCards();
