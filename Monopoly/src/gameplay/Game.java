@@ -1,6 +1,6 @@
 package gameplay;
-import java.util.ArrayList;
-import playersetup.Player;
+
+import codingtools.UserPrompts;
 
 public class Game {
 	
@@ -13,14 +13,22 @@ public class Game {
 	//print to screen constantly informing players
 	
 	
+	public static void main(String[] args){
+		int numberOfPlayers = UserPrompts.playerNumber();
+		System.out.println(+numberOfPlayers);
+		boolean buyProp = UserPrompts.buyProperty();
+		System.out.println(buyProp);
+	}
 	
-	int numberOfPlayers;
+
+	
+	//int numberOfPlayers;
 	//private ArrayList<Player> players;
 	
-	public void inputNumPlayers(int num)
-	{
-		numberOfPlayers = num;
-	}
+	//public void inputNumPlayers(int num)
+	//{
+		//numberOfPlayers = num;
+	//}
 	
 	
 	

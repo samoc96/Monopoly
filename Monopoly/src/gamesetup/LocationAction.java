@@ -6,6 +6,7 @@ import playersetup.Player;
 import java.util.*;
 import propertysetup.DefineProperties;
 import propertysetup.Properties;
+import codingtools.UserPrompts;
 
 public class LocationAction {
 	private Player p;
@@ -13,15 +14,18 @@ public class LocationAction {
 		this.p=p;
 	}
 	
+	
 	public void action(){
 		
 		HashMap<Integer, Properties> d = DefineProperties.getHashMap();
 		int pos = p.getPosition();
 		CcDeck cc = new CcDeck();
 		ChanceDeck c = new ChanceDeck();
+		//UserPrompts
 		
 		if(pos == 0) {
 			//print you are on Go
+			int p = 49;
 		}
 		
 		if(pos == 10) {
