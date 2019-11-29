@@ -18,6 +18,7 @@ public abstract class Properties {
 		this.mortgage=mortgage;
 		owner = null;
 	}
+	
 	 
 	public int getPrice() {
 		return price;
@@ -30,6 +31,7 @@ public abstract class Properties {
 	public abstract int setRentPrice() ;
 	
 	public int getRentPrice() {
+		rentPrice = setRentPrice();
 		return rentPrice;
 	}
 

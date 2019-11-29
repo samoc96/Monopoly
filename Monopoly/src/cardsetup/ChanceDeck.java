@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class ChanceDeck{
-	ChanceCards c = new ChanceCards();
-	private ArrayList <CardDef> chanceDeck;
+	
+	private ArrayList <CardDef> chanceDeck = new ArrayList <CardDef>();
 
 	public ChanceDeck() {
+		ChanceCards c = new ChanceCards();
 		chanceDeck.add(c.chance1);
 		chanceDeck.add(c.chance2);
 		chanceDeck.add(c.chance3);
@@ -25,11 +26,11 @@ public class ChanceDeck{
 		chanceDeck.add(c.chance15);
 		chanceDeck.add(c.chance16);
 		
-		Collections.shuffle(chanceDeck);
+		//Collections.shuffle(chanceDeck);
 	}
 	
 	public CardDef getCard() {
-		CardDef d = chanceDeck.get(0);
+		CardDef d = chanceDeck.get(4);
 		Collections.rotate(chanceDeck, -1);
 		return d;
 	}

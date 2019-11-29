@@ -2,6 +2,7 @@ package playersetup;
 
 import java.util.ArrayList;
 
+import codingtools.UserPrompts;
 import propertysetup.Properties;
 
 import gamesetup.Dice;
@@ -17,6 +18,8 @@ public class Player {
 	private int numOfProps;
 	private boolean isInJail;
 	private boolean isBankrupt;
+	private int numOfRR;
+	private int numOfU;
 	
 	public Player(String n, Token t) {
 		this.name = n;
@@ -27,6 +30,8 @@ public class Player {
 		numOfDoubles=0;
 		money=1500;
 		numOfProps=0;
+		numOfRR = 0;
+		numOfU = 0;
 		isInJail=false;
 		isBankrupt=false;
 	}
@@ -57,18 +62,29 @@ public class Player {
 	
 	public int movePosition(int numOfSpaces)
 	{
-		int new_position=0;
 		if(numOfSpaces<0 && -position>numOfSpaces) {
-			new_position += 40+position+numOfSpaces;
+			position = 40+position+numOfSpaces;
+		}
+		else if(position+numOfSpaces>=40) {
+			UserPrompts.pastGo();
+			money += 200;
+			position = position+numOfSpaces-40;
 		}
 		else {
-		new_position = position+numOfSpaces;
+		position = position+numOfSpaces;
 		}
-		return new_position;
+		return position;
 	}
 	
 	public void setPosition(int position) {
-		this.position = position;
+		if(this.position > position && isInJail == false) {
+			UserPrompts.pastGo();
+			money += 200;
+			this.position = position;
+		}
+		else {
+			this.position = position;	
+		}	
 	}
 	
 	public void setHasJailCard(boolean b) {
@@ -122,6 +138,22 @@ public class Player {
 
 	public boolean isBankrupt() {
 		return isBankrupt;
+	}
+
+	public int getNumOfRR() {
+		return numOfRR;
+	}
+
+	public void setNumOfRR(int numOfRR) {
+		this.numOfRR = numOfRR;
+	}
+
+	public int getNumOfU() {
+		return numOfU;
+	}
+
+	public void setNumOfU(int numOfU) {
+		this.numOfU = numOfU;
 	}
 
 }

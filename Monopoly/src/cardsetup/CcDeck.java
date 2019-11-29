@@ -6,10 +6,11 @@ import java.util.Collections;
 
 
 public class CcDeck {
-	CommunityChestCards c = new CommunityChestCards();
-	private ArrayList <CardDef> CcDeck;
+	
+	private ArrayList <CardDef> CcDeck = new ArrayList <CardDef>();
 
 	public CcDeck() {
+		CommunityChestCards c = new CommunityChestCards();
 		CcDeck.add(c.CC1);
 		CcDeck.add(c.CC2);
 		CcDeck.add(c.CC3);
@@ -33,6 +34,7 @@ public class CcDeck {
 	public CardDef getCard() {
 		CardDef d = CcDeck.get(0);
 		Collections.rotate(CcDeck, -1);
+		//System.out.print(d.getMessage());
 		return d;
 	}
 }
