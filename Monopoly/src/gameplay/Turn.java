@@ -57,11 +57,12 @@ public class Turn {
 			}
 		}
 		
-		DisplayMessages.displayBreak();
 		DisplayMessages.playersBank(player);
 		if(player.getNumOfProps()!=0) {
 			DisplayMessages.playersProperties(player);
 		}
+		DisplayMessages.displayBreak();
+
 		
 	}		
 }

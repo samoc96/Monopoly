@@ -94,12 +94,12 @@ public class LocationAction {
 			}
 			
 			
-			if(property.getOwner()==p && ((TitleDeeds) property).isMonopoly()==true){
+			//if(property.getOwner()==p && ((TitleDeeds) property).isMonopoly()==true){
 			//ask if they want to build or mortgage etc
-				if(UserPrompts.buildHouse()) {
-					PropActions.buildHH(p, property);
-				}
-			}	
+				//if(UserPrompts.buildHouse()) {
+					//PropActions.buildHH(p, property);
+			//	}
+			//}	
 			if(property.getOwner()==p) {
 				if(UserPrompts.mortgageProperty()) {
 				PropActions.mortgageProp(p, property);
