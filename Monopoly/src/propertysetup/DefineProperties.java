@@ -40,7 +40,7 @@ public class DefineProperties {
 	Properties boa = new TitleDeeds("Boardwalk", PropType.DARKBLUE, 400, 200, 200, 50, 200, 600, 1400, 1700, 2000, 2);
 	
 	Properties rea = new RailRoads("Reading Railroad", PropType.RAILROAD, 200, 100);
-	Properties penn = new RailRoads("Pennsylvania Railroad", PropType.RAILROAD, 200, 1000);
+	Properties penn = new RailRoads("Pennsylvania Railroad", PropType.RAILROAD, 200, 100);
 	Properties bo = new RailRoads("B & O Railroad", PropType.RAILROAD, 200, 100);
 	Properties sho = new RailRoads("Short Line Railroad", PropType.RAILROAD, 200, 100);
 	

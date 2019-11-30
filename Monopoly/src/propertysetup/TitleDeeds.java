@@ -42,18 +42,25 @@ public class TitleDeeds extends Properties{
 	{
 		if(numOfHouses <5 && numOfHotels==0)
 		{
-			if (numOfHouses == 0)
-			rentPrice = rentPrice1;
-			numOfHouses++;
-			if (numOfHouses == 1)
-			rentPrice = rentPrice2;
-			numOfHouses++;
-			if (numOfHouses == 2)
-			rentPrice = rentPrice3;
-			numOfHouses++;
-			if (numOfHouses == 3)
-			rentPrice = rentPrice4;
-			numOfHouses++;
+			if (numOfHouses == 0) {
+				rentPrice = rentPrice1;
+				numOfHouses++;	
+			}
+			
+			else if (numOfHouses == 1) {
+				rentPrice = rentPrice2;
+				numOfHouses++;					
+			}
+			
+			else if (numOfHouses == 2) {
+				rentPrice = rentPrice3;
+				numOfHouses++;				
+			}
+			
+			else if (numOfHouses == 3) {
+				rentPrice = rentPrice4;
+				numOfHouses++;			
+			}
 			if (numOfHouses == 4)
 			rentPrice = rentPriceH;
 			numOfHouses=0;
@@ -71,12 +78,13 @@ public class TitleDeeds extends Properties{
 		if(!(getOwner()==null))
 		{
 			int count = 0;
-			for(Properties p : getOwner().getProperties())
-				if (p.getPropType().equals(getPropType()))
-					count ++;
+			for(int i = 0; i<getOwner().getNumOfProps(); i++) {
+				if (getOwner().getProperties().get(i).getPropType().equals(getPropType())){
+					count ++;					
+				}
+			}				
 			return (count == numForMono);
 		}
 		else return false;
 	}
-	
 }

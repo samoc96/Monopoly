@@ -1,117 +1,51 @@
 package gameplay;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import codingtools.UserPrompts;
-import gamesetup.LocationAction;
-import gamesetup.PropActions;
+import codingtools.DisplayMessages;
+import gamesetup.Dice;
 import playersetup.DefinePlayer;
 import playersetup.Player;
-import playersetup.Token;
 import propertysetup.DefineProperties;
-import propertysetup.Properties;
 
 public class Game {
 	
-	
-	//scan in number of players
-	//scan in player names
-	//scan in player tokens
-	//add players to array list
-	//while loop that iterates through players and performs turn()
-	//print to screen constantly informing players
-	
-	
 	public static void main(String[] args){
-		//int numberOfPlayers = UserPrompts.playerNumber();
-		//System.out.println(+numberOfPlayers);
-		//boolean buyProp = UserPrompts.buyProperty();
-		//System.out.println(buyProp);
-		//UserPrompts.locationMessage("Go");
-		
-		
-		UserPrompts.welcomeMessage();
+		DisplayMessages.welcomeMessage();
 		DefinePlayer.setPlayers();
 		ArrayList <Player> gamePlayers = DefinePlayer.getPlayers();
-		//Player player = new Player("Sam", Token.BLACK);
-		//while(true) {
-			//if(UserPrompts.playersTurn(player)) {
-				//Turn turn = new Turn(player);
-				//turn.playerRoll();
-			//}
-		//}
-		//UserPrompts.playersPosition(gamePlayers.get(0));
-		//UserPrompts.playersBank(gamePlayers.get(0));
-		DefineProperties.setProperties();
-		HashMap<Integer, Properties> test = DefineProperties.getHashMap();
-		//PropActions propActions = new PropActions(gamePlayers.get(1), test.get(15));
 		
-		PropActions.buyProp(gamePlayers.get(1), test.get(15));
-		//PropActions propActions = new PropActions(gamePlayers.get(1), test.get(25));
-		PropActions.buyProp(gamePlayers.get(1), test.get(25));
-		UserPrompts.playersBank(gamePlayers.get(1));		
+			
+		
+		//DisplayMessages.welcomeMessage();
+		//DefineProperties.setProperties();
+		//HashMap<Integer, Properties> d = DefineProperties.getHashMap();
+		//Player player = new Player("Sam");
+		//DisplayMessages.playersBank(player);
+		//PropActions.buyProp(player, d.get(1));
+		//PropActions.buyProp(player, d.get(3));
+		//PropActions.buyProp(player, d.get(6));
+		//DisplayMessages.playersBank(player);
+		//DisplayMessages.playersProperties(player);
+		//DisplayMessages.displayBreak();
 		
 		
-		//System.out.print("\n"+test.get(15).getRentPrice());
-		//UserPrompts.playersBank(gamePlayers.get(1));
-		//UserPrompts.playersProperties(gamePlayers.get(1));
-		LocationAction locationAction = new LocationAction(gamePlayers.get(0));
-		gamePlayers.get(0).setPosition(7);
-		locationAction.action();
-		
-		UserPrompts.playersBank(gamePlayers.get(0));
-		UserPrompts.playersBank(gamePlayers.get(1));
-		//System.out.print(gamePlayers.get(0).getIsInJail());
-		
-		//UserPrompts.playersPosition(gamePlayers.get(0));
-		//UserPrompts.playersBank(gamePlayers.get(0));
-		//UserPrompts.playersProperties(gamePlayers.get(1));
-		//UserPrompts.playersBank(gamePlayers.get(1));		
-		//UserPrompts.playersBank(gamePlayers.get(2));		
-		//System.out.print(player.getPosition()+"\n");
-		//player.movePosition(-3);
-		//System.out.print(player.getPosition());
-		
-		
-		
-		
-		//HashMap<Integer, Properties> test = DefineProperties.getHashMap();
-		//System.out.println(test.get(1).getName());
-	
-		
-		
-		//DefinePlayer.setPlayers();
-		//ArrayList <Player> gamePlayers = DefinePlayer.getPlayers();
-		//for(int i = 0; i < gamePlayers.size(); i++) {
-			//UserPrompts.playersBank(gamePlayers.get(i));			
-		//}
-		//int i = 0;
-		
-		//while(gamePlayers.size()>0) {
-			//if(UserPrompts.playersTurn(gamePlayers.get(i))) {
-				//Turn turn = new Turn(gamePlayers.get(i));
-				//turn.playerRoll();
-			//}
-			//i++;
-			//if(i>gamePlayers.size()-1) {
-				//i=0;
-			//}
-		//}
+		//DisplayMessages.playersProperties(player);
 
-	}
-
-	
-
-	
-	//int numberOfPlayers;
-	//private ArrayList<Player> players;
-	
-	//public void inputNumPlayers(int num)
-	//{
-		//numberOfPlayers = num;
-	//}
-	
-	
-	
+		
+		//TEST BANKRUPTCY
+		
+		// TEST HOUSE AND HOTELS
+//		PropActions.buyProp(player, d.get(1));
+	//	PropActions.buyProp(player, d.get(3));
+		//System.out.print(((TitleDeeds) d.get(1)).isMonopoly()+"\n");
+		//System.out.print(((TitleDeeds) d.get(1)).getRentPrice()+"\n");
+		//((TitleDeeds) d.get(1)).addHouse();
+		//System.out.print(((TitleDeeds) d.get(1)).getRentPrice()+"\n");
+		//Properties med = new TitleDeeds("Mediterranean Avenue", PropType.PURPLE, 60, 30, 50, 2, 10, 30, 90, 160, 250, 2);
+		//Properties bal = new TitleDeeds("Baltic Avenue", PropType.PURPLE, 60, 30, 50, 4, 20, 60, 180, 320, 450, 2);
+		
+		
+		//Test rolling doubles
+		
+	}	
 }

@@ -10,8 +10,8 @@ public class DefinePlayer {
 	private static ArrayList <Player> gamePlayers = new ArrayList <Player>(); 
 	
 	public static void setPlayers() {
-		for(int i = 0; i<numOfPlayer; i++) {
-			gamePlayers.add(new Player(UserPrompts.playerName(i+1), Token.BLACK));
+		for(int i = 1; i<=numOfPlayer; i++) {
+			gamePlayers.add(new Player(UserPrompts.playerName(i)));
 		}
 	}
 	

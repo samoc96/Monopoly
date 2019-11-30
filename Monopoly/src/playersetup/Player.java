@@ -2,7 +2,7 @@ package playersetup;
 
 import java.util.ArrayList;
 
-import codingtools.UserPrompts;
+import codingtools.DisplayMessages;
 import propertysetup.Properties;
 
 import gamesetup.Dice;
@@ -10,7 +10,6 @@ import gamesetup.Dice;
 public class Player {
 	private String name;
 	private int money;
-	private Token token;
 	private int position;
 	private boolean hasJailCard;
 	private int numOfDoubles;
@@ -21,9 +20,8 @@ public class Player {
 	private int numOfRR;
 	private int numOfU;
 	
-	public Player(String n, Token t) {
+	public Player(String n) {
 		this.name = n;
-		this.token = t;
 		hasJailCard=false;
 		position=0;
 		myProperties= new ArrayList<Properties>();
@@ -44,10 +42,6 @@ public class Player {
 		return money;
 	}
 
-	public Token getToken() {
-		return token;
-	}
-
 	public void pay(int amount){
 		money-=amount;
 	}
@@ -66,7 +60,7 @@ public class Player {
 			position = 40+position+numOfSpaces;
 		}
 		else if(position+numOfSpaces>=40) {
-			UserPrompts.pastGo();
+			DisplayMessages.pastGo();
 			money += 200;
 			position = position+numOfSpaces-40;
 		}
@@ -78,7 +72,7 @@ public class Player {
 	
 	public void setPosition(int position) {
 		if(this.position > position && isInJail == false) {
-			UserPrompts.pastGo();
+			DisplayMessages.pastGo();
 			money += 200;
 			this.position = position;
 		}
@@ -100,9 +94,23 @@ public class Player {
 		p.receive(amount);
 	}
 	
-	public void newProperty(Properties p){
-		myProperties.add(p);
+	public void newProperty(Properties properties){
+		myProperties.add(properties);
 		numOfProps++;
+	}
+	
+	public void removeProperty(Properties properties){
+		for(int i=0; i<numOfProps; i++) {
+			if(myProperties.get(i).equals(properties)) {
+				myProperties.remove(i);
+				numOfProps--;
+				break;
+			}	
+		}	
+	}
+	
+	public int getNumberOfDoubles() {
+		return numOfDoubles;
 	}
 	
 	public void threeDoubles(Dice dice){
