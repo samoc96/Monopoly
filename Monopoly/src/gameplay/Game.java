@@ -34,7 +34,6 @@ public class Game {
 				if(dice.die1==dice.die2) {
 					count++;
 					DisplayMessages.doubleRolled();
-					DisplayMessages.displayBreak();
 				}
 				else {
 					count = 0;

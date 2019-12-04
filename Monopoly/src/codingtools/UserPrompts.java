@@ -2,6 +2,8 @@ package codingtools;
 
 import java.util.InputMismatchException;
 
+import propertysetup.Properties;
+
 public class UserPrompts {
 	
 	public static int playerNumber(){
@@ -70,8 +72,8 @@ public class UserPrompts {
 	
 	}
 	
-	public static boolean buyProperty(){
-		return yesNo("Would you like to purchase this property? y/n ");
+	public static boolean buyProperty(Properties properties){
+		return yesNo("Would you like to purchase this property for a cost of: $"+properties.getPrice()+"? y/n ");
 	}
 	
 	public static boolean useJailCard(){

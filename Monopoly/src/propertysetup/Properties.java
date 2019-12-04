@@ -9,6 +9,7 @@ public abstract class Properties {
 	private int mortgage;
 	private Player owner;
 	private int rentPrice;
+	
 
 	
 	public Properties(String name, PropType propType, int price, int mortgage){
@@ -28,13 +29,25 @@ public abstract class Properties {
 		return mortgage;
 	}
 	
-	public abstract int getNumOfHouses();
+	public abstract int setNumOfHouses();
 	
-	public abstract int getNumOfHotels();
+	public abstract int setNumOfHotels();
 	
 	public abstract int setRentPrice() ;
 	
-	public abstract int getHousePrice();
+	public abstract int setHousePrice();
+	
+	public int getNumOfHouses() {
+		return setNumOfHouses();
+	}
+	
+	public int getNumOfHotels() {
+		return setNumOfHotels();
+	}
+	
+	public int getHousePrice() {
+		return setHousePrice();
+	}
 	
 	public abstract boolean isMonopoly();
 	

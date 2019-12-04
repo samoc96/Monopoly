@@ -16,30 +16,30 @@ public class LocationAction {
 
 		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
 		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();	
-		int pos = player.getPosition();
+		int position = player.getPosition();
 		CcDeck cc = new CcDeck();
 		ChanceDeck c = new ChanceDeck();
 		
 		
-		if(pos == 0) {
+		if(position == 0) {
 			//print you are on Go
 			DisplayMessages.locationMessage("Go");
 			return;
 		}
 		
-		if(pos == 10) {
+		if(position == 10) {
 			//print you are Just Visiting
 			DisplayMessages.locationMessage("Just Visiting");
 			return;
 		}
 		
-		if(pos == 20) {
+		if(position == 20) {
 			//print you are on Free Parking
 			DisplayMessages.locationMessage("Free Parking");
 			return;
 		}
 		
-		if(pos == 30) {
+		if(position == 30) {
 			//print you are on Go To Jail
 			DisplayMessages.locationMessage("Go to Jail!");
 			player.setIsInJail(true);
@@ -47,7 +47,7 @@ public class LocationAction {
 			return;
 		}
 		
-		if(pos == 2||pos == 17||pos ==33) {
+		if(position == 2||position == 17||position ==33) {
 			DisplayMessages.locationMessage("Community Chest");
 			cc.getCard().action(player);
 			if(cc.getCard().getCardType().equals(CardType.GOJ)) {
@@ -56,7 +56,7 @@ public class LocationAction {
 			return;
 		
 		}
-		else if(pos == 7||pos == 22||pos ==36) {
+		else if(position == 7||position == 22||position ==36) {
 			DisplayMessages.locationMessage("Chance");
 			c.getCard().action(player);
 			if(c.getCard().getCardType().equals(CardType.GOJ)) {
@@ -65,14 +65,14 @@ public class LocationAction {
 			return;
 		}
 		
-		else if(pos == 4) {
+		else if(position == 4) {
 			DisplayMessages.locationMessage("Income Tax");
 			DisplayMessages.taxMessage(200);
 			player.pay(200);
 			return;
 		}
 		
-		else if(pos == 38) {
+		else if(position == 38) {
 			DisplayMessages.locationMessage("Super Tax");
 			DisplayMessages.taxMessage(75);
 			player.pay(75);
@@ -80,12 +80,12 @@ public class LocationAction {
 		}
 		
 		else {
-			Properties property = d.get(pos);
+			Properties property = d.get(position);
 			DisplayMessages.locationMessage(property.getName());
 		
 			if(property.getOwner() == null) {
 				//ask player if he wants to buy it
-				if(UserPrompts.buyProperty()) {
+				if(UserPrompts.buyProperty(property)) {
 					PropActions.buyProp(player, property);
 				}
 			}
@@ -94,19 +94,6 @@ public class LocationAction {
 				DisplayMessages.rentMessage(property.getOwner().getName(), property.getRentPrice());
 				PropActions.payRent(player, property);
 			}
-			
-			
-			//if(property.getOwner()==p && ((TitleDeeds) property).isMonopoly()==true){
-			//ask if they want to build or mortgage etc
-				//if(UserPrompts.buildHouse()) {
-					//PropActions.buildHH(p, property);
-			//	}
-			//}	
-			//if(property.getOwner()==p) {
-				//if(UserPrompts.mortgageProperty()) {
-				//PropActions.mortgageProp(p, property);
-				//}
-		//	}
 		}
 	}
 }

@@ -27,46 +27,46 @@ public class TitleDeeds extends Properties{
 		this.numForMono=numForMono;
 	}
 
-	public int getNumOfHouses() {
-		return numOfHouses;
-	}
-	
-	public int getNumOfHotels() {
-		return numOfHotels;
-	}
-	public int getHousePrice() {
+	public int setHousePrice() {
 		return housePrice;
 	}
 
-	public void addHouse()
-	{
-		if(numOfHouses <5 && numOfHotels==0)
-		{
+	public void addHouse() {
+		if(numOfHouses <5 && numOfHotels==0){
 			if (numOfHouses == 0) {
 				rentPrice = rentPrice1;
-				numOfHouses++;	
-			}
+				numOfHouses++;
+				}
 			
 			else if (numOfHouses == 1) {
 				rentPrice = rentPrice2;
 				numOfHouses++;					
-			}
+				}
 			
 			else if (numOfHouses == 2) {
 				rentPrice = rentPrice3;
 				numOfHouses++;				
-			}
+				}
 			
 			else if (numOfHouses == 3) {
 				rentPrice = rentPrice4;
 				numOfHouses++;			
-			}
-			if (numOfHouses == 4)
-			rentPrice = rentPriceH;
-			numOfHouses=0;
-			numOfHotels=1;		
+				}
+			if (numOfHouses == 4) {
+				rentPrice = rentPriceH;
+				numOfHouses=0;
+				numOfHotels=1;		
+				}
 			getOwner().pay(housePrice);
+			}
 		}
+	
+	public int setNumOfHouses() {
+		return numOfHouses;
+	}
+	
+	public int setNumOfHotels() {
+		return numOfHotels;
 	}
 
 	public int setRentPrice() {

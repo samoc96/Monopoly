@@ -30,29 +30,28 @@ public class RailRoads extends Properties{
 
 
 	@Override
-	public int getNumOfHouses() {
+	public int setNumOfHouses() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
-
-	@Override
-	public int getNumOfHotels() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	@Override
-	public int getHousePrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 
 	@Override
 	public boolean isMonopoly() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+	@Override
+	public int setNumOfHotels() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int setHousePrice() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
