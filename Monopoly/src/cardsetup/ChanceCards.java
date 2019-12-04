@@ -5,8 +5,8 @@ public class ChanceCards {
 		CardDef chance1 = new CardDef("Advance to \"Go\"\n", CardType.MOVE_TO, 0, 0);
 		CardDef chance2 = new CardDef("Advance to Illinois Ave. {Avenue}. If you pass Go, collect $200.\n", CardType.MOVE_TO, 24, 0);
 		CardDef chance3 = new CardDef("Advance to St. Charles Place. If you pass Go, collect $200.\n", CardType.MOVE_TO, 11, 0);
-		CardDef chance4 = new CardDef("Advance token to nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total 10 times the amount thrown.\n", CardType.MOVE_UTIL, 0, 0);
-		CardDef chance5 = new CardDef("Advance token to the nearest Railroad and pay owner twice the rental to which he/she {he} is otherwise entitled. If Railroad is unowned, you may buy it from the Bank\n", CardType.MOVE_RR, 0, 0);
+		CardDef chance4 = new CardDef("Advance token to nearest Utility. If unowned, you may buy it from the Bank.\nIf owned, throw dice and pay owner a total 10 times the amount thrown.\n", CardType.MOVE_UTIL, 0, 0);
+		CardDef chance5 = new CardDef("Advance token to the nearest Railroad and pay owner twice the rental to which he/she {he} is otherwise entitled.\nIf Railroad is unowned, you may buy it from the Bank\n", CardType.MOVE_RR, 0, 0);
 		CardDef chance6 = new CardDef("Bank pays you dividend of $50.\n", CardType.RECEIVE, 50, 0);
 		CardDef chance7 = new CardDef("Get out of Jail Free. This card may be kept until needed, or traded/sold.\n", CardType.GOJ, 0, 0);
 		CardDef chance8 = new CardDef("Go Back Three {3} Spaces.", CardType.MOVE, -3, 0);

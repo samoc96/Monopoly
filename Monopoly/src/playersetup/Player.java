@@ -5,14 +5,12 @@ import java.util.ArrayList;
 import codingtools.DisplayMessages;
 import propertysetup.Properties;
 
-import gamesetup.Dice;
-
 public class Player {
 	private String name;
 	private int money;
 	private int position;
 	private boolean hasJailCard;
-	private int numOfDoubles;
+	private int numOfJailDoubles;
 	private ArrayList <Properties> myProperties; 
 	private int numOfProps;
 	private boolean isInJail;
@@ -25,7 +23,7 @@ public class Player {
 		hasJailCard=false;
 		position=0;
 		myProperties= new ArrayList<Properties>();
-		numOfDoubles=0;
+		numOfJailDoubles=0;
 		money=1500;
 		numOfProps=0;
 		numOfRR = 0;
@@ -109,19 +107,12 @@ public class Player {
 		}	
 	}
 	
-	public int getNumberOfDoubles() {
-		return numOfDoubles;
+	public int getNumberOfJailDoubles() {
+		return numOfJailDoubles;
 	}
 	
-	public void threeDoubles(Dice dice){
-		if(dice.die1==dice.die2){
-			numOfDoubles++;
-		}
-		if(numOfDoubles==3){
-			isInJail=true;
-			position=10;
-			numOfDoubles=0;
-		}
+	public void setNumberOfJailDoubles(int numOfJailDoubles) {
+		this.numOfJailDoubles = numOfJailDoubles;
 	}
 
 	public ArrayList <Properties> getProperties() {

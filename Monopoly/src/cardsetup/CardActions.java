@@ -8,14 +8,16 @@ import gamesetup.Dice;
 import gamesetup.LocationAction;
 import gamesetup.PropActions;
 import playersetup.Player;
-import propertysetup.DefineProperties;
+import propertysetup.DefinePropertiesSingleton;
 import propertysetup.Properties;
 
 public class CardActions {
 	
 	public static void moveToRailRoad(Player player) {
-		HashMap<Integer, Properties> d = DefineProperties.getHashMap();
-		LocationAction la = new LocationAction(player);
+
+		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
+		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();		
+
 		int posR = player.getPosition();
 		
 		if(posR<5) {
@@ -42,13 +44,14 @@ public class CardActions {
 			DisplayMessages.rentMessage(d.get(posR).getOwner().getName(), d.get(posR).getRentPrice()*2);
 		}
 		else {
-			la.action();	
+			LocationAction.action(player);	
 		}
 	}
 	
 	public static void moveUtility(Player player) {
-		HashMap<Integer, Properties> d = DefineProperties.getHashMap();
-		LocationAction la = new LocationAction(player);
+		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
+		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();
+		LocationAction.action(player);
 		Dice dice = new Dice();
 		int posU = player.getPosition();
 		
@@ -69,7 +72,7 @@ public class CardActions {
 			player.payPlayer(d.get(posU).getOwner(), (dice.die1+dice.die2)*10);
 		}
 		else {
-			la.action();
+			LocationAction.action(player);
 		}
 	}
 	

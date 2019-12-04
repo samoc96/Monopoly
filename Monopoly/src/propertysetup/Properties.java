@@ -28,7 +28,15 @@ public abstract class Properties {
 		return mortgage;
 	}
 	
+	public abstract int getNumOfHouses();
+	
+	public abstract int getNumOfHotels();
+	
 	public abstract int setRentPrice() ;
+	
+	public abstract int getHousePrice();
+	
+	public abstract boolean isMonopoly();
 	
 	public int getRentPrice() {
 		rentPrice = setRentPrice();

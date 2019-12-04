@@ -37,4 +37,8 @@ public class CcDeck {
 		//System.out.print(d.getMessage());
 		return d;
 	}
+	
+	public void removeCard() {
+		CcDeck.remove(0);
+	}
 }

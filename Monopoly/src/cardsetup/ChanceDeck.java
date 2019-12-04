@@ -34,4 +34,8 @@ public class ChanceDeck{
 		Collections.rotate(chanceDeck, -1);
 		return d;
 	}
+	
+	public void removeCard() {
+		chanceDeck.remove(0);
+	}
 }

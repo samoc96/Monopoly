@@ -6,12 +6,10 @@ import codingtools.DisplayMessages;
 import playersetup.DefinePlayer;
 import playersetup.Player;
 import propertysetup.Properties;
-import propertysetup.TitleDeeds;
 
 public class CardDef {
 	private String message;
 	private CardType cardType;
-	private Player owner;
 	private int cardTypeVariable1;
 	private int cardTypeVariable2;
 	
@@ -20,7 +18,6 @@ public class CardDef {
 		this.cardType=cardType;
 		this.cardTypeVariable1=cardTypeVariable1;
 		this.cardTypeVariable2=cardTypeVariable2;
-		owner = null;
 	}
 	
 	public String getMessage() {
@@ -31,13 +28,6 @@ public class CardDef {
 		return cardType;
 	}
 
-	public void setOwner(Player player) {
-		owner = player;	
-	}
-	
-	public Player getOwner() {
-		return owner;
-	}
 
 	public void action(Player player) {
 		ArrayList <Player> gamePlayers = DefinePlayer.getPlayers();
@@ -66,7 +56,6 @@ public class CardDef {
 			case GOJ:
 				DisplayMessages.cardMessage(message);
 				player.setHasJailCard(true);
-				this.owner = player;
 				break;
 				
 			case GTJ:
@@ -91,8 +80,8 @@ public class CardDef {
 				ArrayList<Properties> props = player.getProperties();
 				
 				for (int i=1; i<=player.getNumOfProps(); i++) {		
-					amount+=cardTypeVariable1*((TitleDeeds) props.get(i)).getNumOfHouses();	
-					amount+=cardTypeVariable2*((TitleDeeds) props.get(i)).getNumOfHotels();		
+					amount+=cardTypeVariable1*props.get(i).getNumOfHouses();	
+					amount+=cardTypeVariable2*props.get(i).getNumOfHotels();		
 				}
 				player.pay(amount);
 				

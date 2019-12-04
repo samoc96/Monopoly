@@ -2,12 +2,23 @@ package propertysetup;
 
 import java.util.HashMap;
 
-public class DefineProperties {
+public class DefinePropertiesSingleton {
+	
+	private static DefinePropertiesSingleton SINGLE_INSTANCE = null;
+	private DefinePropertiesSingleton(){
+	}
+	
+	public static synchronized DefinePropertiesSingleton getInstance() {
+        if(SINGLE_INSTANCE == null) {
+        	SINGLE_INSTANCE = new DefinePropertiesSingleton();
+        }
+        return SINGLE_INSTANCE;
+    }
 	
 	private static HashMap<Integer, Properties> hs = new HashMap<Integer, Properties>();
 
 	
-	public static void setProperties(){
+	public void setProperties(){
 	Properties med = new TitleDeeds("Mediterranean Avenue", PropType.PURPLE, 60, 30, 50, 2, 10, 30, 90, 160, 250, 2);
 	Properties bal = new TitleDeeds("Baltic Avenue", PropType.PURPLE, 60, 30, 50, 4, 20, 60, 180, 320, 450, 2);
 
@@ -78,7 +89,7 @@ public class DefineProperties {
 	}
 	
 	
-	public static HashMap<Integer, Properties> getHashMap(){
+	public HashMap<Integer, Properties> getHashMap(){
 		return hs;
 	}
 	

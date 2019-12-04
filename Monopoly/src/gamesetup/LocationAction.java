@@ -1,26 +1,22 @@
 package gamesetup;
 
+import cardsetup.CardType;
 import cardsetup.CcDeck;
 import cardsetup.ChanceDeck;
 import playersetup.Player;
 import java.util.*;
-import propertysetup.DefineProperties;
+import propertysetup.DefinePropertiesSingleton;
 import propertysetup.Properties;
-import propertysetup.TitleDeeds;
 import codingtools.DisplayMessages;
 import codingtools.UserPrompts;
 
 public class LocationAction {
-	private Player p;
-	public LocationAction(Player p){
-		this.p=p;
-	}
 	
-	
-	public void action(){
+	public static void action(Player player){
 
-		HashMap<Integer, Properties> d = DefineProperties.getHashMap();
-		int pos = p.getPosition();
+		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
+		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();	
+		int pos = player.getPosition();
 		CcDeck cc = new CcDeck();
 		ChanceDeck c = new ChanceDeck();
 		
@@ -46,34 +42,40 @@ public class LocationAction {
 		if(pos == 30) {
 			//print you are on Go To Jail
 			DisplayMessages.locationMessage("Go to Jail!");
-			p.setPosition(10);
-			p.setIsInJail(true);
+			player.setIsInJail(true);
+			player.setPosition(10);
 			return;
 		}
 		
 		if(pos == 2||pos == 17||pos ==33) {
 			DisplayMessages.locationMessage("Community Chest");
-			cc.getCard().action(p);
+			cc.getCard().action(player);
+			if(cc.getCard().getCardType().equals(CardType.GOJ)) {
+				cc.removeCard();
+			}
 			return;
 		
 		}
 		else if(pos == 7||pos == 22||pos ==36) {
 			DisplayMessages.locationMessage("Chance");
-			c.getCard().action(p);
+			c.getCard().action(player);
+			if(c.getCard().getCardType().equals(CardType.GOJ)) {
+				c.removeCard();
+			}
 			return;
 		}
 		
 		else if(pos == 4) {
 			DisplayMessages.locationMessage("Income Tax");
 			DisplayMessages.taxMessage(200);
-			p.pay(200);
+			player.pay(200);
 			return;
 		}
 		
 		else if(pos == 38) {
 			DisplayMessages.locationMessage("Super Tax");
 			DisplayMessages.taxMessage(75);
-			p.pay(75);
+			player.pay(75);
 			return;
 		}
 		
@@ -84,13 +86,13 @@ public class LocationAction {
 			if(property.getOwner() == null) {
 				//ask player if he wants to buy it
 				if(UserPrompts.buyProperty()) {
-					PropActions.buyProp(p, property);
+					PropActions.buyProp(player, property);
 				}
 			}
 			
-			else if (property.getOwner()!=p) {
+			else if (property.getOwner()!=player) {
 				DisplayMessages.rentMessage(property.getOwner().getName(), property.getRentPrice());
-				PropActions.payRent(p, property);
+				PropActions.payRent(player, property);
 			}
 			
 			
@@ -100,11 +102,11 @@ public class LocationAction {
 					//PropActions.buildHH(p, property);
 			//	}
 			//}	
-			if(property.getOwner()==p) {
-				if(UserPrompts.mortgageProperty()) {
-				PropActions.mortgageProp(p, property);
-				}
-			}
+			//if(property.getOwner()==p) {
+				//if(UserPrompts.mortgageProperty()) {
+				//PropActions.mortgageProp(p, property);
+				//}
+		//	}
 		}
 	}
 }

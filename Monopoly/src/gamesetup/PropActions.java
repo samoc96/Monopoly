@@ -10,26 +10,20 @@ import propertysetup.Utilities;
 
 public class PropActions {
 	
-	Player p;
-	Properties prop;
-	//public PropActions(Player p, Properties prop){
-		//this.p=p;
-		//this.prop=prop;
-	//}
-	
-	public static void buyProp(Player p, Properties prop){
-		p.pay(prop.getPrice());
-		prop.setOwner(p);
-		p.newProperty(prop);
-		if(prop.getPropType().equals(PropType.RAILROAD)) {
-			int n = 1 + p.getNumOfRR();
-			p.setNumOfRR(n);
-			((RailRoads) prop).setRailRoadRentPrice(n);
+	public static void buyProp(Player player, Properties properties){
+		player.pay(properties.getPrice());
+		properties.setOwner(player);
+		player.newProperty(properties);
+		DisplayMessages.boughtProperty(properties);
+		if(properties.getPropType().equals(PropType.RAILROAD)) {
+			int n = 1 + player.getNumOfRR();
+			player.setNumOfRR(n);
+			((RailRoads) properties).setRailRoadRentPrice(n);
 		}
 		
-		else if(prop.getPropType().equals(PropType.UTILITY)) {
-			int u = 1 + p.getNumOfU();
-			p.setNumOfU(u);
+		else if(properties.getPropType().equals(PropType.UTILITY)) {
+			int u = 1 + player.getNumOfU();
+			player.setNumOfU(u);
 			}
 	}
 	
@@ -40,23 +34,23 @@ public class PropActions {
 		properties.setOwner(null);		
 	}
 	
-	public static void buildHH(Player p, Properties prop){
-		((TitleDeeds) prop).addHouse();	
+	public static void buildHH(Player player, Properties properties){
+		((TitleDeeds) properties).addHouse();	
 	}
 	
-	public static void payRent(Player p, Properties prop){
-		if(prop.getPropType().equals(PropType.UTILITY)) {
-			((Utilities) prop).setUtilitiesRentPrice(prop.getOwner().getNumOfU());			
-			p.payPlayer(prop.getOwner(), prop.getRentPrice());
+	public static void payRent(Player player, Properties properties){
+		if(properties.getPropType().equals(PropType.UTILITY)) {
+			((Utilities) properties).setUtilitiesRentPrice(properties.getOwner().getNumOfU());			
+			player.payPlayer(properties.getOwner(), properties.getRentPrice());
 		}
 		
-		if(prop.getPropType().equals(PropType.RAILROAD)) {
-			((RailRoads) prop).setRailRoadRentPrice(prop.getOwner().getNumOfRR());			
-			p.payPlayer(prop.getOwner(), prop.getRentPrice());
+		if(properties.getPropType().equals(PropType.RAILROAD)) {
+			((RailRoads) properties).setRailRoadRentPrice(properties.getOwner().getNumOfRR());			
+			player.payPlayer(properties.getOwner(), properties.getRentPrice());
 		}
 		
 		else {
-			p.payPlayer(prop.getOwner(), prop.getRentPrice());			
+			player.payPlayer(properties.getOwner(), properties.getRentPrice());			
 		}
 	}
 	
