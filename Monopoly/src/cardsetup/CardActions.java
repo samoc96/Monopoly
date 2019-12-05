@@ -13,7 +13,7 @@ import propertysetup.Properties;
 
 public class CardActions {
 	
-	public static void moveToRailRoad(Player player) {
+	public static void moveToRailRoad(Player player, ArrayList <Player> gamePlayers) {
 
 		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
 		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();		
@@ -44,14 +44,14 @@ public class CardActions {
 			DisplayMessages.rentMessage(d.get(posR).getOwner().getName(), d.get(posR).getRentPrice()*2);
 		}
 		else {
-			LocationAction.action(player);	
+			LocationAction.action(player, gamePlayers);	
 		}
 	}
 	
-	public static void moveUtility(Player player) {
+	public static void moveUtility(Player player,ArrayList <Player> gamePlayers) {
 		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
 		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();
-		LocationAction.action(player);
+		LocationAction.action(player,gamePlayers);
 		Dice dice = new Dice();
 		int posU = player.getPosition();
 		
@@ -72,7 +72,7 @@ public class CardActions {
 			player.payPlayer(d.get(posU).getOwner(), (dice.die1+dice.die2)*10);
 		}
 		else {
-			LocationAction.action(player);
+			LocationAction.action(player,gamePlayers);
 		}
 	}
 	

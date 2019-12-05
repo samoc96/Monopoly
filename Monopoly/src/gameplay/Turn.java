@@ -1,5 +1,7 @@
 package gameplay;
 
+import java.util.ArrayList;
+
 import codingtools.DisplayMessages;
 import codingtools.UserPrompts;
 import gamesetup.Dice;
@@ -10,7 +12,7 @@ import propertysetup.TitleDeeds;
 
 public class Turn {
 	
-	public static void playerTurn(Player player,Dice dice){
+	public static void playerTurn(Player player,Dice dice, ArrayList <Player> gamePlayers){
 		DisplayMessages.playersTurn(player);
 		DisplayMessages.playersBank(player);
 		if(player.getNumOfProps()!=0 && UserPrompts.viewProperties()) {
@@ -36,7 +38,7 @@ public class Turn {
 			}	
 		dice.roll();
 		player.movePosition(dice.die1+dice.die2);
-		LocationAction.action(player);
+		LocationAction.action(player, gamePlayers);
 		if(player.getMoney()<0) {
 			DisplayMessages.bankruptWarningMessage();
 			int n = player.getNumOfProps();
@@ -58,20 +60,20 @@ public class Turn {
 		DisplayMessages.displayBreak();
 		}
 	
-	public static void jailTurn(Player player, Dice dice) {
+	public static void jailTurn(Player player, Dice dice,ArrayList <Player> gamePlayers) {
 		DisplayMessages.jailMessage();
 		if(player.getHasJailCard() && UserPrompts.useJailCard()) {
 			//if(UserPrompts.useJailCard()) {
 				DisplayMessages.usedJailCard();
 				player.setIsInJail(false);
-				playerTurn(player,dice);
+				playerTurn(player,dice,gamePlayers);
 			//}
 		}
 		else if(UserPrompts.payJailFine()){
 			DisplayMessages.payJailFine();
 			player.pay(50);
 			player.setIsInJail(false);
-			playerTurn(player,dice);
+			playerTurn(player,dice,gamePlayers);
 		}
 		else {
 			DisplayMessages.rollDoubleJail();
@@ -79,7 +81,7 @@ public class Turn {
 			if(dice.die1 == dice.die2) {
 				DisplayMessages.doubleRolledJail();
 				player.setIsInJail(false);
-				playerTurn(player,dice);				
+				playerTurn(player,dice,gamePlayers);				
 			}
 			else {
 				player.setNumberOfJailDoubles(player.getNumberOfJailDoubles()+1);
@@ -87,7 +89,7 @@ public class Turn {
 					DisplayMessages.doublePayJailFine();
 					player.pay(50);
 					player.setIsInJail(false);
-					playerTurn(player,dice);
+					playerTurn(player,dice,gamePlayers);
 				}
 				else {
 					DisplayMessages.noDoubleRolledJail();

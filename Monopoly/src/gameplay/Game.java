@@ -23,10 +23,10 @@ public class Game {
 		while(gamePlayers.size()>1 && numOfBankrupt<2) {
 			
 			if(gamePlayers.get(i).getIsInJail() == true) {
-				Turn.jailTurn(gamePlayers.get(i), dice);
+				Turn.jailTurn(gamePlayers.get(i), dice,gamePlayers);
 			}
 			else {
-				Turn.playerTurn(gamePlayers.get(i), dice);
+				Turn.playerTurn(gamePlayers.get(i), dice,gamePlayers);
 				if(gamePlayers.get(i).isBankrupt()) {
 					gamePlayers.remove(i);
 					numOfBankrupt += 1;
@@ -60,6 +60,7 @@ public class Game {
 		int w = 0;
 		for(i = 0;i<gamePlayers.size();i++) {
 			int money = 0;
+			money += gamePlayers.get(i).getMoney();
 			for(int j=0; j<gamePlayers.get(i).getNumOfProps();j++) {
 				money += gamePlayers.get(i).getProperties().get(j).getPrice();
 				money += gamePlayers.get(i).getProperties().get(j).getNumOfHouses()*gamePlayers.get(i).getProperties().get(j).getHousePrice();	

@@ -2,6 +2,9 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
+import org.junit.Before;
 import org.junit.Test;
 
 import cardsetup.CardDef;
@@ -18,7 +21,14 @@ public class CardDefTest {
 	CardDef chance9 = new CardDef("Go to Jail. Go directly to Jail. Do not pass GO, do not collect $200.\n", CardType.GTJ, 10, 0);
 
 	Player player = new Player("Tester");
+	ArrayList <Player> gamePlayers = new ArrayList <Player>();
 
+
+	@Before
+	public void setPlayer() {
+		gamePlayers.add(player);
+	}
+	
 	@Test
 	public void testGetMessage() {
 		//When
@@ -40,7 +50,7 @@ public class CardDefTest {
 	@Test
 	public void testActionOne() {
 		//When
-		cardDef.action(player);
+		cardDef.action(player,gamePlayers);
 		int result = player.getPosition();
 		
 		//Then
@@ -50,7 +60,7 @@ public class CardDefTest {
 	@Test
 	public void testActionTwo() {
 		//When
-		chance6.action(player);
+		chance6.action(player,gamePlayers);
 		int result = player.getMoney();
 		
 		//Then
@@ -60,7 +70,7 @@ public class CardDefTest {
 	@Test
 	public void testActionThree() {
 		//When
-		chance8.action(player);
+		chance8.action(player,gamePlayers);
 		int result = player.getPosition();
 		
 		//Then
@@ -70,7 +80,7 @@ public class CardDefTest {
 	@Test
 	public void testActionFour() {
 		//When
-		chance11.action(player);
+		chance11.action(player,gamePlayers);
 		int result = player.getMoney();
 		
 		//Then
@@ -80,7 +90,7 @@ public class CardDefTest {
 	@Test
 	public void testActionFive() {
 		//When
-		chance9.action(player);
+		chance9.action(player,gamePlayers);
 		int result = player.getPosition();
 		boolean resultTwo = player.getIsInJail();
 		

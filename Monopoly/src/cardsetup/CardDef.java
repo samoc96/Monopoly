@@ -3,7 +3,6 @@ package cardsetup;
 import java.util.ArrayList;
 
 import codingtools.DisplayMessages;
-import playersetup.DefinePlayer;
 import playersetup.Player;
 import propertysetup.Properties;
 
@@ -29,8 +28,8 @@ public class CardDef {
 	}
 
 
-	public void action(Player player) {
-		ArrayList <Player> gamePlayers = DefinePlayer.getPlayers();
+	public void action(Player player, ArrayList <Player> gamePlayers) {
+		//ArrayList <Player> gamePlayers = DefinePlayer.getPlayers();
 		switch(cardType) {
 			case MOVE:
 				DisplayMessages.cardMessage(message);
@@ -90,13 +89,13 @@ public class CardDef {
 			case MOVE_UTIL:
 				
 				DisplayMessages.cardMessage(message);
-				CardActions.moveUtility(player);
+				CardActions.moveUtility(player,gamePlayers);
 				break;
 				
 			case MOVE_RR:
 				
 				DisplayMessages.cardMessage(message);
-				CardActions.moveToRailRoad(player);
+				CardActions.moveToRailRoad(player,gamePlayers);
 				break;
 		}
 	}

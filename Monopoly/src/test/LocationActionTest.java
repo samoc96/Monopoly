@@ -2,8 +2,10 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import gamesetup.LocationAction;
@@ -14,15 +16,22 @@ import propertysetup.Properties;
 public class LocationActionTest {
 	Player player = new Player("Tester");
 	Player playerTwo = new Player("TesterTwo");
+	ArrayList <Player> gamePlayers = new ArrayList <Player>();
 	DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
 //	DefinePropertiesSingleton.setProperties();
+	
+	@Before
+	public void setUp() {
+		gamePlayers.add(player);
+		definePropertiesSingleton.setProperties();
+		}
 	
 	
 	@Test
 	public void testActionOne() {
 		//When
 		player.setPosition(0);
-		LocationAction.action(player);
+		LocationAction.action(player,gamePlayers);
 		//Then
 		int result = player.getPosition();
 		assertEquals(0, result);
@@ -32,7 +41,7 @@ public class LocationActionTest {
 	public void testActionTwo() {
 		//When
 		player.setPosition(10);
-		LocationAction.action(player);
+		LocationAction.action(player,gamePlayers);
 		int result = player.getPosition();
 		//Then
 		assertEquals(10, result);
@@ -42,7 +51,7 @@ public class LocationActionTest {
 	public void testActionThree() {
 		//When
 		player.setPosition(20);
-		LocationAction.action(player);
+		LocationAction.action(player,gamePlayers);
 		int result = player.getPosition();
 		//Then
 		assertEquals(20, result);
@@ -52,7 +61,7 @@ public class LocationActionTest {
 	public void testActionFour() {
 		//When
 		player.setPosition(30);
-		LocationAction.action(player);
+		LocationAction.action(player,gamePlayers);
 		int result = player.getPosition();
 		boolean resultTwo = player.getIsInJail();
 		//Then
@@ -65,7 +74,7 @@ public class LocationActionTest {
 	public void testActionFive() {
 		//When
 		player.setPosition(4);
-		LocationAction.action(player);
+		LocationAction.action(player,gamePlayers);
 		int result = player.getMoney();
 		//Then
 		assertEquals(1500-200,result);
@@ -75,7 +84,7 @@ public class LocationActionTest {
 	public void testActionSix() {
 		//When
 		player.setPosition(38);
-		LocationAction.action(player);
+		LocationAction.action(player,gamePlayers);
 		int result = player.getMoney();
 		//Then
 		assertEquals(1500-75,result);
@@ -84,12 +93,10 @@ public class LocationActionTest {
 	@Test
 	public void testActionSeven() {
 		//When
-		definePropertiesSingleton.setProperties();
 		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();	
-
 		d.get(1).setOwner(playerTwo);
 		player.setPosition(1);
-		LocationAction.action(player);
+		LocationAction.action(player,gamePlayers);
 		int result = player.getMoney();
 		int resultTwo = playerTwo.getMoney();
 		//Then

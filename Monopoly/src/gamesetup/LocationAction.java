@@ -12,7 +12,7 @@ import codingtools.UserPrompts;
 
 public class LocationAction {
 	
-	public static void action(Player player){
+	public static void action(Player player, ArrayList <Player> gamePlayers){
 
 		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
 		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();	
@@ -49,7 +49,7 @@ public class LocationAction {
 		
 		if(position == 2||position == 17||position ==33) {
 			DisplayMessages.locationMessage("Community Chest");
-			cc.getCard().action(player);
+			cc.getCard().action(player, gamePlayers);
 			if(cc.getCard().getCardType().equals(CardType.GOJ)) {
 				cc.removeCard();
 			}
@@ -58,7 +58,7 @@ public class LocationAction {
 		}
 		else if(position == 7||position == 22||position ==36) {
 			DisplayMessages.locationMessage("Chance");
-			c.getCard().action(player);
+			c.getCard().action(player, gamePlayers);
 			if(c.getCard().getCardType().equals(CardType.GOJ)) {
 				c.removeCard();
 			}
