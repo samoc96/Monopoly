@@ -3,7 +3,6 @@ Team ID: 30b
 
 **The Structure:**
 - Source code located within Master
-- 
 
 **The Game:**
 - As this projected was completed alone I left out the following rules (still well above 50% of rules were implemented):
