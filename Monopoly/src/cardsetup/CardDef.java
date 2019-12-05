@@ -6,12 +6,25 @@ import codingtools.DisplayMessages;
 import playersetup.Player;
 import propertysetup.Properties;
 
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to setup the community chest and chance cards.
+ *
+ */
 public class CardDef {
 	private String message;
 	private CardType cardType;
 	private int cardTypeVariable1;
 	private int cardTypeVariable2;
 	
+	/**
+	 * Each card has a message, a CardType, and 2 variables. These variables are used to perform various actions depending on the CardType. 
+	 * @param message
+	 * @param cardType
+	 * @param cardTypeVariable1
+	 * @param cardTypeVariable2
+	 */
 	public CardDef(String message, CardType cardType, int cardTypeVariable1, int cardTypeVariable2) {
 		this.message=message;
 		this.cardType=cardType;
@@ -19,17 +32,31 @@ public class CardDef {
 		this.cardTypeVariable2=cardTypeVariable2;
 	}
 	
+	/**
+	 * @return
+	 * The cards message.
+	 */
 	public String getMessage() {
 		return message;
 	}
-	
+	/**
+	 * @return
+	 * The cards CardType.
+	 */
 	public CardType getCardType() {
 		return cardType;
 	}
 
-
+	/**
+	 * Takes in a player and an arrayList of player.<p>
+	 * Depending on the CardType various actions may be performed on the player.<p>
+	 * The cardTypeVariable1 is used for actions such as paying/receiving money and moving/setting position of the player.<p>
+	 * The cardTypeVariable2 is used for the price of repairing damages for hotels.<p>
+	 * The arrayList of players is needed for when a player must either pay/receieve all.
+	 * @param player
+	 * @param gamePlayers
+	 */
 	public void action(Player player, ArrayList <Player> gamePlayers) {
-		//ArrayList <Player> gamePlayers = DefinePlayer.getPlayers();
 		switch(cardType) {
 			case MOVE:
 				DisplayMessages.cardMessage(message);

@@ -12,7 +12,12 @@ import gamesetup.LocationAction;
 import playersetup.Player;
 import propertysetup.DefinePropertiesSingleton;
 import propertysetup.Properties;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to test the LocationAction class.
+ *
+ */
 public class LocationActionTest {
 	Player player = new Player("Tester");
 	Player playerTwo = new Player("TesterTwo");
@@ -75,9 +80,9 @@ public class LocationActionTest {
 		//When
 		player.setPosition(4);
 		LocationAction.action(player,gamePlayers);
-		int result = player.getMoney();
+		double result = player.getMoney();
 		//Then
-		assertEquals(1500-200,result);
+		assertEquals(1500-200,result,0.0);
 	}
 	
 	@Test
@@ -85,9 +90,9 @@ public class LocationActionTest {
 		//When
 		player.setPosition(38);
 		LocationAction.action(player,gamePlayers);
-		int result = player.getMoney();
+		double result = player.getMoney();
 		//Then
-		assertEquals(1500-75,result);
+		assertEquals(1500-75,result,0.0);
 	}
 	
 	@Test
@@ -97,10 +102,10 @@ public class LocationActionTest {
 		d.get(1).setOwner(playerTwo);
 		player.setPosition(1);
 		LocationAction.action(player,gamePlayers);
-		int result = player.getMoney();
-		int resultTwo = playerTwo.getMoney();
+		double result = player.getMoney();
+		double resultTwo = playerTwo.getMoney();
 		//Then
-		assertEquals(1500-d.get(1).getRentPrice(),result);
-		assertEquals(1500+d.get(1).getRentPrice(),resultTwo);
+		assertEquals(1500-d.get(1).getRentPrice(),result,0.0);
+		assertEquals(1500+d.get(1).getRentPrice(),resultTwo,0.0);
 	}
 }

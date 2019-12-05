@@ -1,5 +1,10 @@
 package cardsetup;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to define the Community Chest Cards.
+ *
+ */
 public class CommunityChestCards {
 	
 	CardDef CC1 = new CardDef("Advance to \"Go\"\n", CardType.MOVE_TO, 0, 0);

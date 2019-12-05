@@ -1,8 +1,8 @@
 package gamesetup;
 
 import cardsetup.CardType;
-import cardsetup.CcDeck;
 import cardsetup.ChanceDeck;
+import cardsetup.CommunityChestDeck;
 import playersetup.Player;
 import java.util.*;
 import propertysetup.DefinePropertiesSingleton;
@@ -10,31 +10,43 @@ import propertysetup.Properties;
 import codingtools.DisplayMessages;
 import codingtools.UserPrompts;
 
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to determine the appropriate action for a given player's position on the board.
+ *
+ */
 public class LocationAction {
-	
+	/**
+	 * Takes in a given player and an arrayList of players.<p>
+	 * Performs various actions for the given player's position.<p>
+	 * Actions can be simple such as displaying where the player is on the board.<p>
+	 * To actions where players must draw a chance/community chest card.<p>
+	 * There are also actions for paying taxes.<p>
+	 * Finally, there are actions for when a player lands on a property and whether he can buy it if unowned, or pay rent otherwise.
+	 * @param player
+	 * @param gamePlayers
+	 */
 	public static void action(Player player, ArrayList <Player> gamePlayers){
 
 		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
 		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();	
 		int position = player.getPosition();
-		CcDeck cc = new CcDeck();
+		CommunityChestDeck cc = new CommunityChestDeck();
 		ChanceDeck c = new ChanceDeck();
 		
 		
 		if(position == 0) {
-			//print you are on Go
 			DisplayMessages.locationMessage("Go");
 			return;
 		}
 		
 		if(position == 10) {
-			//print you are Just Visiting
 			DisplayMessages.locationMessage("Just Visiting");
 			return;
 		}
 		
 		if(position == 20) {
-			//print you are on Free Parking
 			DisplayMessages.locationMessage("Free Parking");
 			return;
 		}
@@ -84,7 +96,6 @@ public class LocationAction {
 			DisplayMessages.locationMessage(property.getName());
 		
 			if(property.getOwner() == null) {
-				//ask player if he wants to buy it
 				if(UserPrompts.buyProperty(property)) {
 					PropActions.buyProp(player, property);
 				}

@@ -9,9 +9,22 @@ import gamesetup.LocationAction;
 import gamesetup.PropActions;
 import playersetup.Player;
 import propertysetup.TitleDeeds;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ *	Class to enable player to perform a normal turn or a jail turn.
+ */
 public class Turn {
-	
+	/**
+	 * Method takes in a player, a dice and an arrayList of players.<p>
+	 * Present's the player with a number of different options such as viewing properties and performing actions.<p>
+	 * Player then roll's the dice and performs a location action based on their new position.<p>
+	 * After this action the method checks if the player is bankrupt.<p>
+	 * Displays messages such as the player's bank and who's turn it is etc.
+	 * @param player
+	 * @param dice
+	 * @param gamePlayers
+	 */
 	public static void playerTurn(Player player,Dice dice, ArrayList <Player> gamePlayers){
 		DisplayMessages.playersTurn(player);
 		DisplayMessages.playersBank(player);
@@ -60,14 +73,24 @@ public class Turn {
 		DisplayMessages.displayBreak();
 		}
 	
+	/**
+	 * Takes in a player, a dice and an arrayList of players.<p>
+	 * First determines if the player has a GOJ card and if they want to use it.<p>
+	 * If they use it, they are free from jail and proceed to their normal turn.<p>
+	 * Otherwise, they have the option to pay a fine and leave jail.<p>
+	 * If they don't pay the fine they may try roll a double to leave.<p>
+	 * If they fail to throw a double in three consecutive jail turns, they pay the fine and leave.
+	 * @param player
+	 * @param dice
+	 * @param gamePlayers
+	 */
 	public static void jailTurn(Player player, Dice dice,ArrayList <Player> gamePlayers) {
+		DisplayMessages.playersTurn(player);
 		DisplayMessages.jailMessage();
 		if(player.getHasJailCard() && UserPrompts.useJailCard()) {
-			//if(UserPrompts.useJailCard()) {
 				DisplayMessages.usedJailCard();
 				player.setIsInJail(false);
 				playerTurn(player,dice,gamePlayers);
-			//}
 		}
 		else if(UserPrompts.payJailFine()){
 			DisplayMessages.payJailFine();

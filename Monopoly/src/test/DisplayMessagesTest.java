@@ -4,7 +4,12 @@ import org.junit.Test;
 
 import codingtools.DisplayMessages;
 import playersetup.Player;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to test the DisplayMessages class.
+ *
+ */
 public class DisplayMessagesTest {
 	Player player = new Player("Tester");
 	@Test

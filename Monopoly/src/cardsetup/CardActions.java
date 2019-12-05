@@ -10,9 +10,20 @@ import gamesetup.PropActions;
 import playersetup.Player;
 import propertysetup.DefinePropertiesSingleton;
 import propertysetup.Properties;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ *Class to perform the card actions for moving to nearest railroad/utility.
+ */
 public class CardActions {
-	
+	/**
+	 * Determines where the nearest railroad is to the current players position.<p>
+	 * Moves the player to this railroad.<p>
+	 * If the railroad is owned but not by the player then the player must pay the owner twice the rent price.<p>
+	 * If unowned, the player has the option to buy it.
+	 * @param player
+	 * @param gamePlayers
+	 */
 	public static void moveToRailRoad(Player player, ArrayList <Player> gamePlayers) {
 
 		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
@@ -47,7 +58,14 @@ public class CardActions {
 			LocationAction.action(player, gamePlayers);	
 		}
 	}
-	
+	/**
+	 * Determines where the nearest utility is to the current players position.<p>
+	 * Moves the player to this utility.<p>
+	 * If the utility is owned but not by the player then the player must pay the owner 10 times the amount rolled on the dice.<p>
+	 * If unowned, the player has the option to buy it.
+	 * @param player
+	 * @param gamePlayers
+	 */
 	public static void moveUtility(Player player,ArrayList <Player> gamePlayers) {
 		DefinePropertiesSingleton definePropertiesSingleton = DefinePropertiesSingleton.getInstance();
 		HashMap<Integer, Properties> d	= definePropertiesSingleton.getHashMap();

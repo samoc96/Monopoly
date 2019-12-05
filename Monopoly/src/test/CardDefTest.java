@@ -10,7 +10,12 @@ import org.junit.Test;
 import cardsetup.CardDef;
 import cardsetup.CardType;
 import playersetup.Player;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to test the CardDef class.
+ *
+ */
 public class CardDefTest {
 	
 
@@ -57,14 +62,14 @@ public class CardDefTest {
 		assertEquals(0, result);
 	}
 	
-	@Test
+
 	public void testActionTwo() {
 		//When
 		chance6.action(player,gamePlayers);
-		int result = player.getMoney();
+		double result = player.getMoney();
 		
 		//Then
-		assertEquals(1500+50, result);
+		assertEquals(1500+50, result,0.0);
 	}
 	
 	@Test
@@ -81,10 +86,10 @@ public class CardDefTest {
 	public void testActionFour() {
 		//When
 		chance11.action(player,gamePlayers);
-		int result = player.getMoney();
+		double result = player.getMoney();
 		
 		//Then
-		assertEquals(1500-15, result);
+		assertEquals(1500-15, result,0.0);
 	}
 	
 	@Test

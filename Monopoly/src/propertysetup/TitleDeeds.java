@@ -1,5 +1,9 @@
 package propertysetup;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ *Class that extends properties and constructs a Titledeeds property.
+ */
 public class TitleDeeds extends Properties{
  
 	private int housePrice;
@@ -13,6 +17,21 @@ public class TitleDeeds extends Properties{
 	private int numOfHotels;
 	private int numForMono;
 	
+	/**
+	 * Construct a Titledeeds property.
+	 * @param name
+	 * @param propType
+	 * @param price
+	 * @param mortgage
+	 * @param housePrice
+	 * @param rentPrice
+	 * @param rentPrice1
+	 * @param rentPrice2
+	 * @param rentPrice3
+	 * @param rentPrice4
+	 * @param rentPriceH
+	 * @param numForMono
+	 */
 	public TitleDeeds(String name, PropType propType, int price, int mortgage, 
 			int housePrice,int rentPrice,int rentPrice1,int rentPrice2,int rentPrice3,int rentPrice4,int rentPriceH,int numForMono){
 		super(name,propType,price,mortgage);
@@ -27,10 +46,18 @@ public class TitleDeeds extends Properties{
 		this.numForMono=numForMono;
 	}
 
+	/**
+	 * Set the house price.
+	 */
 	public int setHousePrice() {
 		return housePrice;
 	}
 
+	/**
+	 * Build a house on the property if monopoly is achieved.<p>
+	 * Can only build one house at a time.<p>
+	 * After 3 houses have been built you can then build a hotel.
+	 */
 	public void addHouse() {
 		if(numOfHouses <5 && numOfHotels==0){
 			if (numOfHouses == 0) {
@@ -60,19 +87,28 @@ public class TitleDeeds extends Properties{
 			getOwner().pay(housePrice);
 			}
 		}
-	
+	/**
+	 * Set number of houses.
+	 */
 	public int setNumOfHouses() {
 		return numOfHouses;
 	}
-	
+	/**
+	 * Set number of hotels.
+	 */
 	public int setNumOfHotels() {
 		return numOfHotels;
 	}
-
+	/**
+	 * Set rent price based on the number of houses/hotels built.
+	 */
 	public int setRentPrice() {
 		return rentPrice;
 	}
-
+	/**
+	 * Determine if the owner has monopoly by comparing this property with the rest of the owners properties.<p>
+	 * Returns true when an owner has every Titledeeds for one color.
+	 */
 	public boolean isMonopoly()
 	{
 		if(!(getOwner()==null))

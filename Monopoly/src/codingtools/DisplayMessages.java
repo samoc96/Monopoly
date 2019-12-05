@@ -2,7 +2,11 @@ package codingtools;
 
 import playersetup.Player;
 import propertysetup.Properties;
-
+/**
+ * 
+ * @author SamOConnor
+ *<p>Class to display various messages.
+ */
 public class DisplayMessages {
 	
 	public static void displayBreak() {
@@ -65,16 +69,25 @@ public class DisplayMessages {
 	public static void welcomeMessage() {
 		System.out.println("Welcome to Monopoly!\n");
 	}
-	
+	/**
+	 * Displays the property that has been mortgaged and the amount received by the player.
+	 * @param properties
+	 */
 	public static void mortgageProp(Properties properties) {
 		System.out.print("The following property has been mortgaged:\n"+properties.getName()+"\n");
 		System.out.print("You will recieve: $"+properties.getMortgage()/2+"\n");
 	}
-	
+	/**
+	 * Displays the plater's bank.
+	 * @param player
+	 */
 	public static void playersBank(Player player){
 		System.out.println(player.getName()+"------------ Bank Account = $"+player.getMoney()+"\n");
 	}
-	
+	/**
+	 * Displays the player's properties.
+	 * @param player
+	 */
 	public static void playersProperties(Player player){
 		System.out.println(player.getName()+" has the following current properties:\n");
 		int assetValue = 0;
@@ -84,11 +97,17 @@ public class DisplayMessages {
 		}
 		System.out.println("Total Value of assets: $"+assetValue+"\n");
 	}
-	
+	/**
+	 * Displays which players turn it is.
+	 * @param player
+	 */
 	public static void playersTurn(Player player){
 		System.out.println("It's " +player.getName()+" turn to roll the dice!\n");
 	}
-	
+	/**
+	 * Displays the player's position.
+	 * @param player
+	 */
 	public static void playersPosition(Player player){
 		
 		System.out.println("Your current position is: " +player.getPosition());

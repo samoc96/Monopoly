@@ -1,5 +1,10 @@
 package cardsetup;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Enum to store the different card types.
+ *
+ */
 public enum CardType {
 	MOVE,
 	MOVE_TO,

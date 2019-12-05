@@ -11,7 +11,12 @@ import playersetup.Player;
 import propertysetup.PropType;
 import propertysetup.Properties;
 import propertysetup.TitleDeeds;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to test the Player class.
+ *
+ */
 public class PlayerTest {
 	Player player = new Player("Tester");
 	Player playerTwo = new Player("TesterTwo");
@@ -37,10 +42,10 @@ public class PlayerTest {
 		player.setPosition(30);
 		player.setIsInJail(false);
 		player.setPosition(5);
-		int result = player.getMoney();
+		double result = player.getMoney();
 		
 		//Then
-		assertEquals(1700,result);
+		assertEquals(1700,result,0.0);
 	}
 	
 	@Test
@@ -118,30 +123,30 @@ public class PlayerTest {
 	@Test
 	public void testGetMoney() {
 		//When
-		int result = player.getMoney();
+		double result = player.getMoney();
 		
 		//Then
-		assertEquals(1500, result);
+		assertEquals(1500, result,0.0);
 	}
 	
 	@Test
 	public void testPay() {
 		//When
 		player.pay(50);
-		int result = player.getMoney();
+		double result = player.getMoney();
 		
 		//Then
-		assertEquals(1500-50, result);
+		assertEquals(1500-50, result,0.0);
 	}
 	
 	@Test
 	public void testReceive() {
 		//When
 		player.receive(50);
-		int result = player.getMoney();
+		double result = player.getMoney();
 		
 		//Then
-		assertEquals(1500+50, result);
+		assertEquals(1500+50, result,0.0);
 	}
 	
 	@Test
@@ -170,12 +175,12 @@ public class PlayerTest {
 	public void testPayPlayer() {
 		//When
 		player.payPlayer(playerTwo, 100);
-		int result = playerTwo.getMoney();
-		int resultTwo = player.getMoney();
+		double result = playerTwo.getMoney();
+		double resultTwo = player.getMoney();
 		
 		//Then
-		assertEquals(1500+100,result);	
-		assertEquals(1500-100,resultTwo);	
+		assertEquals(1500+100,result,0.0);	
+		assertEquals(1500-100,resultTwo,0.0);	
 
 	}
 	

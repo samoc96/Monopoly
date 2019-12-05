@@ -1,5 +1,10 @@
 package propertysetup;
-
+/**
+ * 
+ * @author SamOConnor
+ * <p> Enum to store the various property types.
+ *
+ */
 public enum PropType {
 	PURPLE, 
 	LIGHTBLUE, 

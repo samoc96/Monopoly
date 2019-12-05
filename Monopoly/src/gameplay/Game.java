@@ -6,10 +6,24 @@ import gamesetup.Dice;
 import playersetup.DefinePlayer;
 import playersetup.Player;
 import propertysetup.DefinePropertiesSingleton;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to play the game and determine winner.
+ *
+ */
 public class Game {
 	private static int numOfBankrupt;
-	
+	/**
+	 * Method that runs until there are less than two players remaining or two players have gone bankrupts.<p>
+	 * Prints welcome message.<p>
+	 * Asks user to create players and stores the players in an arrayList.<p>
+	 * Iterates through the arrayList and each player performs either a normal or jail turn.<p>
+	 * If a player rolls a double during a normal turn they go again.<p>
+	 * If they roll three consecutive doubles in a turn they go to jail.<p>
+	 * If a player goes bankrupt he is removed from the game.<p>
+	 * After the loop is broken, the game is over and the winner is determined using the Winner method.
+	 */
 	public static void play(){
 		int i = 0;
 		int count = 0;
@@ -54,6 +68,14 @@ public class Game {
 		System.out.print(Winner(gamePlayers).getName()+" is the Winner with a bank account of: $" +Winner(gamePlayers).getMoney()+"\nCONGRATULATIONS!");
 	}
 		
+	/**
+	 * Method to determine who has won the game.<p>
+	 * Iterates through the remaining players once the game has ended and determines their combined cash and total assets value.<p>
+	 * Player with most value wins.
+	 * @param gamePlayers
+	 * @return
+	 * The player who has won the game.
+	 */
 	public static Player Winner(ArrayList <Player> gamePlayers) {
 		int i=0;
 		int most_money = 0;

@@ -1,13 +1,21 @@
 package propertysetup;
 
 import java.util.HashMap;
-
+/**
+ * 
+ * @author SamOConnor
+ *<p> Class to store the defined properties in a HashMap.
+ */
 public class DefinePropertiesSingleton {
 	
 	private static DefinePropertiesSingleton SINGLE_INSTANCE = null;
 	private DefinePropertiesSingleton(){
 	}
-	
+	/**
+	 * 
+	 * @return
+	 * Singleton instance of DefinePropertiesSingleton.
+	 */
 	public static synchronized DefinePropertiesSingleton getInstance() {
         if(SINGLE_INSTANCE == null) {
         	SINGLE_INSTANCE = new DefinePropertiesSingleton();
@@ -17,7 +25,11 @@ public class DefinePropertiesSingleton {
 	
 	private static HashMap<Integer, Properties> hs = new HashMap<Integer, Properties>();
 
-	
+	/**
+	 * Defines the properties for Titledeeds, Railroads and Utilities.
+	 * <p>Stores these in a HashMap.
+	 * <p>HashMap key corresponds to the position of the property on the board.
+	 */
 	public void setProperties(){
 	Properties med = new TitleDeeds("Mediterranean Avenue", PropType.PURPLE, 60, 30, 50, 2, 10, 30, 90, 160, 250, 2);
 	Properties bal = new TitleDeeds("Baltic Avenue", PropType.PURPLE, 60, 30, 50, 4, 20, 60, 180, 320, 450, 2);
@@ -88,7 +100,11 @@ public class DefinePropertiesSingleton {
 	hs.put(28, wat);
 	}
 	
-	
+	/**
+	 * 
+	 * @return
+	 * HashMap containing all the properties.
+	 */
 	public HashMap<Integer, Properties> getHashMap(){
 		return hs;
 	}

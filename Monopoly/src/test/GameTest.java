@@ -12,7 +12,12 @@ import playersetup.Player;
 import propertysetup.PropType;
 import propertysetup.Properties;
 import propertysetup.TitleDeeds;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to test the Game class.
+ *
+ */
 public class GameTest {
 	Player player = new Player("Tester");
 	Player playerTwo = new Player("TesterTwo");

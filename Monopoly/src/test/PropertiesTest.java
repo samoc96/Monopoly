@@ -13,7 +13,12 @@ import propertysetup.Properties;
 import propertysetup.RailRoads;
 import propertysetup.TitleDeeds;
 import propertysetup.Utilities;
-
+/**
+ * 
+ * @author SamOConnor<p>
+ * Class to test the Properties class.
+ *
+ */
 public class PropertiesTest {
 
 	Properties underTestTitleDeedsMED = new TitleDeeds("Mediterranean Avenue", PropType.PURPLE, 60, 30, 50, 2, 10, 30, 90, 160, 250, 2);
