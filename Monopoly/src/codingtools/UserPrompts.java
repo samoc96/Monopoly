@@ -23,11 +23,11 @@ public class UserPrompts {
 					break;
 				}
 				else {
-					System.out.print("You must enter an integer value between 2-6!\n");
+					throw new InputMismatchException();
 				}
 			} 
 			catch(InputMismatchException e){
-				System.out.print("You must enter an integer value between 2-6!\n");
+				System.out.print("Reason for failure - " + e.getMessage()+"\nPlease input an integer between 2-6!\n");
 			}
 		}
 		return playerNumber;
@@ -48,12 +48,12 @@ public class UserPrompts {
 					break;	
 				}
 				else {
-					System.out.print("Please enter a string for the player's name!\n");
+					throw new InputMismatchException();
 				}
 			}
 			
 			catch(InputMismatchException e){
-				System.out.print("Please enter a string for the player's name!\n");
+				System.out.print("Reason for failure - " + e.getMessage()+"\nPlease enter a string for the player's name!\n");
 			}
 		}
 		return playerName;
@@ -77,12 +77,12 @@ public class UserPrompts {
 					break;	
 				}
 				else {
-					System.out.print("Please press the enter button!\n");
+					throw new InputMismatchException();
 				}
 			}
 			
 			catch(InputMismatchException e){
-				System.out.print("Please press the enter button!\n");
+				System.out.print("Reason for failure - " + e.getMessage()+"\nPlease press the enter button!\n");
 			}
 		}
 		return pressedEnter;
@@ -177,11 +177,11 @@ public class UserPrompts {
 					break;
 				}
 				else {
-					System.out.print("You must enter either y or n!\n");
+					throw new InputMismatchException();
 				}
 			}
 			catch(InputMismatchException e){
-				System.out.print("You must enter either y or n!\n");
+				System.out.print("Reason for failure - " + e.getMessage()+"\nYou must enter either y or n!\n");
 			}
 		}
 		return yesNo;
