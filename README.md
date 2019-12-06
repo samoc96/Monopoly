@@ -2,6 +2,7 @@
 Team ID: 30b
 
 **The Structure:**
+- JAR file located within Monopoly
 - Source code located within Monopoly/src
 - UML diagrams located within Monopoly/UML
     - Included JPEG files for diagrams created using Object Aid
