@@ -2,7 +2,10 @@
 Team ID: 30b
 
 **The Structure:**
-- Source code located within Master
+- Source code located within Monopoly/src
+- UML diagrams located within Monopoly/UML
+    - Included JPEG files for diagrams created using Object Aid
+    - Use case diagram created with Papyrus
 
 **The Game:**
 - As this projected was completed alone I left out the following rules (still well above 50% of rules were implemented):
@@ -17,7 +20,7 @@ Team ID: 30b
             - If after all his assets are mortgaged his money is still negative then he is declared bankrupt
             - The mortgaged assets are left with no owners and can be bought when landed on like before
     - Players not obliged to pay double rent when monopoly achieved
-
+- One other thing to note is that when rolling the dice you must hit 'Enter' twice as the first time is seen as an input.
 **Teamwork**:
 - Unfortunately my partner was not prepared to put in the work for this project so I was left to implement it alone.
 - I wasted a lot of time trying to encourgae him to produce classes to enable me to complete the project but it was a disaster.
