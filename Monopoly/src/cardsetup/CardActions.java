@@ -48,7 +48,7 @@ public class CardActions {
 			posR=35;
 		}
 		if(d.get(posR).getOwner()!=null && d.get(posR).getOwner()!=player) {
-			DisplayMessages.locationMessage(d.get(posR).getName());
+			DisplayMessages.locationMessage(d.get(posR));
 			System.out.print("This railroad is owned! Pay the owner twice the current rent price!\n");
 			PropActions.payRent(player, d.get(posR));
 			PropActions.payRent(player, d.get(posR));
@@ -82,7 +82,7 @@ public class CardActions {
 			posU=28;
 
 		}
-		DisplayMessages.locationMessage(d.get(posU).getName());
+		DisplayMessages.locationMessage(d.get(posU));
 		if(d.get(posU).getOwner()!=null && d.get(posU).getOwner()!=player) {
 			System.out.print("This utility is owned! Pay the owner 10 times the amount thrown on your next roll!\n");
 			dice.roll();

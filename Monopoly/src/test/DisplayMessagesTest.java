@@ -22,7 +22,7 @@ public class DisplayMessagesTest {
 		DisplayMessages.houseBought();
 		DisplayMessages.jailMessage();
 		DisplayMessages.payJailFine();
-		DisplayMessages.locationMessage("Go");
+		DisplayMessages.locationMessageNonProperty("Go");
 		DisplayMessages.playersBank(player);
 		DisplayMessages.playersPosition(player);
 		DisplayMessages.playersTurn(player);

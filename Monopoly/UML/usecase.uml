@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_yMC_wBgQEeqyb62_Mnd_IQ" name="usecase">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_yOIqcBgQEeqyb62_Mnd_IQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_E6UcwBgREeqyb62_Mnd_IQ" name="Player1"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_gLdSsBgREeqyb62_Mnd_IQ" name="Monopoly">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_GHmvQBgREeqyb62_Mnd_IQ" name="Game">
+      <include xmi:type="uml:Include" xmi:id="_U1lxMBgSEeqyb62_Mnd_IQ" addition="_yrEooBgREeqyb62_Mnd_IQ"/>
+      <include xmi:type="uml:Include" xmi:id="_ViqSkBgSEeqyb62_Mnd_IQ" addition="_1GGgoBgREeqyb62_Mnd_IQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_prrEsBgREeqyb62_Mnd_IQ" name="View Properties">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_s8oCoBgSEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_yrEooBgREeqyb62_Mnd_IQ" name="Turn">
+      <extend xmi:type="uml:Extend" xmi:id="_s8nbkBgSEeqyb62_Mnd_IQ" extendedCase="_prrEsBgREeqyb62_Mnd_IQ" extensionLocation="_s8oCoBgSEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_teVBgBgSEeqyb62_Mnd_IQ" extendedCase="_-qSMoBgREeqyb62_Mnd_IQ" extensionLocation="_teWPoBgSEeqyb62_Mnd_IQ"/>
+      <include xmi:type="uml:Include" xmi:id="_sYhQABgSEeqyb62_Mnd_IQ" addition="_qGQ5gBgSEeqyb62_Mnd_IQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_1GGgoBgREeqyb62_Mnd_IQ" name="JailTurn">
+      <extend xmi:type="uml:Extend" xmi:id="_g8GQABgSEeqyb62_Mnd_IQ" extendedCase="_BbgXEBgSEeqyb62_Mnd_IQ" extensionLocation="_g8IsQBgSEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_hX9FkBgSEeqyb62_Mnd_IQ" extendedCase="_JpP0kBgSEeqyb62_Mnd_IQ" extensionLocation="_hX-TsBgSEeqyb62_Mnd_IQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_-qSMoBgREeqyb62_Mnd_IQ" name="PropertyAction">
+      <extend xmi:type="uml:Extend" xmi:id="_6t4MABgSEeqyb62_Mnd_IQ" extendedCase="_3YaFABgSEeqyb62_Mnd_IQ" extensionLocation="_6t4zEBgSEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_7SaccBgSEeqyb62_Mnd_IQ" extendedCase="_0h1ggBgSEeqyb62_Mnd_IQ" extensionLocation="_7SbqkBgSEeqyb62_Mnd_IQ"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_teWPoBgSEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_BbgXEBgSEeqyb62_Mnd_IQ" name="PayFine">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_g8IsQBgSEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_ixsfsBgSEeqyb62_Mnd_IQ" name="ExtensionPoint2"/>
+      <include xmi:type="uml:Include" xmi:id="_kodNABgSEeqyb62_Mnd_IQ" addition="_yrEooBgREeqyb62_Mnd_IQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_JpP0kBgSEeqyb62_Mnd_IQ" name="Roll Dice">
+      <extend xmi:type="uml:Extend" xmi:id="_h9gCoBgSEeqyb62_Mnd_IQ" extendedCase="_Z5l2kBgSEeqyb62_Mnd_IQ" extensionLocation="_h9hQwBgSEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_ixrRkBgSEeqyb62_Mnd_IQ" extendedCase="_BbgXEBgSEeqyb62_Mnd_IQ" extensionLocation="_ixsfsBgSEeqyb62_Mnd_IQ"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_hX-TsBgSEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Z5l2kBgSEeqyb62_Mnd_IQ" name="roll Double">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_h9hQwBgSEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+      <include xmi:type="uml:Include" xmi:id="_mpssABgSEeqyb62_Mnd_IQ" addition="_yrEooBgREeqyb62_Mnd_IQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_qGQ5gBgSEeqyb62_Mnd_IQ" name="Roll Dice">
+      <include xmi:type="uml:Include" xmi:id="_zNwpgBgSEeqyb62_Mnd_IQ" addition="_xJd2gBgSEeqyb62_Mnd_IQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_xJd2gBgSEeqyb62_Mnd_IQ" name="Move Position">
+      <extend xmi:type="uml:Extend" xmi:id="_NYjicBgTEeqyb62_Mnd_IQ" extendedCase="_KF6F8BgTEeqyb62_Mnd_IQ" extensionLocation="_NYkJgBgTEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_N0tS8BgTEeqyb62_Mnd_IQ" extendedCase="_8WUwgBgSEeqyb62_Mnd_IQ" extensionLocation="_N0t6ABgTEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_OOpc8BgTEeqyb62_Mnd_IQ" extendedCase="_ApvtgBgTEeqyb62_Mnd_IQ" extensionLocation="_OOqEABgTEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_O2jKcBgTEeqyb62_Mnd_IQ" extendedCase="_C8-7cBgTEeqyb62_Mnd_IQ" extensionLocation="_O2jxgBgTEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_PYMe8BgTEeqyb62_Mnd_IQ" extendedCase="_EklycBgTEeqyb62_Mnd_IQ" extensionLocation="_PYNGABgTEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_QCFwgBgTEeqyb62_Mnd_IQ" extendedCase="_GDMecBgTEeqyb62_Mnd_IQ" extensionLocation="_QCGXkBgTEeqyb62_Mnd_IQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_0h1ggBgSEeqyb62_Mnd_IQ" name="Build House">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_7SbqkBgSEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_3YaFABgSEeqyb62_Mnd_IQ" name="Mortgage Property">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_6t4zEBgSEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_8WUwgBgSEeqyb62_Mnd_IQ" name="Pay Tax">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_N0t6ABgTEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_ApvtgBgTEeqyb62_Mnd_IQ" name="Land on Property">
+      <extend xmi:type="uml:Extend" xmi:id="_k8Wj8BgTEeqyb62_Mnd_IQ" extendedCase="_aDBC4BgTEeqyb62_Mnd_IQ" extensionLocation="_k8XLABgTEeqyb62_Mnd_IQ"/>
+      <extend xmi:type="uml:Extend" xmi:id="_lcD-wBgTEeqyb62_Mnd_IQ" extendedCase="_bBbL4BgTEeqyb62_Mnd_IQ" extensionLocation="_lcD-wRgTEeqyb62_Mnd_IQ"/>
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_OOqEABgTEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_C8-7cBgTEeqyb62_Mnd_IQ" name="Chance Card">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_O2jxgBgTEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_EklycBgTEeqyb62_Mnd_IQ" name="Community Chest">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_PYNGABgTEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_GDMecBgTEeqyb62_Mnd_IQ" name="Go to Jail">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_QCGXkBgTEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_KF6F8BgTEeqyb62_Mnd_IQ" name="No Action (Just Visiting etc)">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_NYkJgBgTEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_aDBC4BgTEeqyb62_Mnd_IQ" name="Pay Rent">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_k8XLABgTEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_bBbL4BgTEeqyb62_Mnd_IQ" name="Buy Property">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_lcD-wRgTEeqyb62_Mnd_IQ" name="ExtensionPoint1"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Vt1LUBgTEeqyb62_Mnd_IQ" memberEnd="_Vt7R8BgTEeqyb62_Mnd_IQ _Vt9uMBgTEeqyb62_Mnd_IQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Vt41sBgTEeqyb62_Mnd_IQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Vt5cwBgTEeqyb62_Mnd_IQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Vt7R8BgTEeqyb62_Mnd_IQ" name="game" type="_GHmvQBgREeqyb62_Mnd_IQ" association="_Vt1LUBgTEeqyb62_Mnd_IQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Vt9uMBgTEeqyb62_Mnd_IQ" name="player1" type="_E6UcwBgREeqyb62_Mnd_IQ" association="_Vt1LUBgTEeqyb62_Mnd_IQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_XJtTcBgTEeqyb62_Mnd_IQ" name="Player (2-5)"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_nfhEQBgTEeqyb62_Mnd_IQ" memberEnd="_nfiSYRgTEeqyb62_Mnd_IQ _nfi5cBgTEeqyb62_Mnd_IQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nfhrUBgTEeqyb62_Mnd_IQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nfiSYBgTEeqyb62_Mnd_IQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_nfiSYRgTEeqyb62_Mnd_IQ" name="player (2-5)" type="_XJtTcBgTEeqyb62_Mnd_IQ" association="_nfhEQBgTEeqyb62_Mnd_IQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_nfi5cBgTEeqyb62_Mnd_IQ" name="pay rent" type="_aDBC4BgTEeqyb62_Mnd_IQ" association="_nfhEQBgTEeqyb62_Mnd_IQ"/>
+  </packagedElement>
+</uml:Model>

@@ -71,8 +71,8 @@ public class Player {
 	 * @param d
 	 */
 
-	public void receive(double d){
-		money+=d;
+	public void receive(double amount){
+		money+=amount;
 	}
 	
 	/**

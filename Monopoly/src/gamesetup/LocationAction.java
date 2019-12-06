@@ -37,30 +37,29 @@ public class LocationAction {
 		
 		
 		if(position == 0) {
-			DisplayMessages.locationMessage("Go");
+			DisplayMessages.locationMessageNonProperty("Go");
 			return;
 		}
 		
 		if(position == 10) {
-			DisplayMessages.locationMessage("Just Visiting");
+			DisplayMessages.locationMessageNonProperty("Just Visiting");
 			return;
 		}
 		
 		if(position == 20) {
-			DisplayMessages.locationMessage("Free Parking");
+			DisplayMessages.locationMessageNonProperty("Free Parking");
 			return;
 		}
 		
 		if(position == 30) {
-			//print you are on Go To Jail
-			DisplayMessages.locationMessage("Go to Jail!");
+			DisplayMessages.locationMessageNonProperty("Go to Jail!");
 			player.setIsInJail(true);
 			player.setPosition(10);
 			return;
 		}
 		
 		if(position == 2||position == 17||position ==33) {
-			DisplayMessages.locationMessage("Community Chest");
+			DisplayMessages.locationMessageNonProperty("Community Chest");
 			cc.getCard().action(player, gamePlayers);
 			if(cc.getCard().getCardType().equals(CardType.GOJ)) {
 				cc.removeCard();
@@ -69,7 +68,7 @@ public class LocationAction {
 		
 		}
 		else if(position == 7||position == 22||position ==36) {
-			DisplayMessages.locationMessage("Chance");
+			DisplayMessages.locationMessageNonProperty("Chance");
 			c.getCard().action(player, gamePlayers);
 			if(c.getCard().getCardType().equals(CardType.GOJ)) {
 				c.removeCard();
@@ -78,14 +77,14 @@ public class LocationAction {
 		}
 		
 		else if(position == 4) {
-			DisplayMessages.locationMessage("Income Tax");
+			DisplayMessages.locationMessageNonProperty("Income Tax");
 			DisplayMessages.taxMessage(200);
 			player.pay(200);
 			return;
 		}
 		
 		else if(position == 38) {
-			DisplayMessages.locationMessage("Super Tax");
+			DisplayMessages.locationMessageNonProperty("Super Tax");
 			DisplayMessages.taxMessage(75);
 			player.pay(75);
 			return;
@@ -93,7 +92,7 @@ public class LocationAction {
 		
 		else {
 			Properties property = d.get(position);
-			DisplayMessages.locationMessage(property.getName());
+			DisplayMessages.locationMessage(property);
 		
 			if(property.getOwner() == null) {
 				if(UserPrompts.buyProperty(property)) {

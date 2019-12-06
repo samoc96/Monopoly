@@ -34,7 +34,7 @@ public class Turn {
 			}
 		if(player.getNumOfProps()!=0 && UserPrompts.propertyAction()) {
 			for(int i = 0; i < player.getNumOfProps(); i++) {
-				System.out.print("For the following property:\n"+player.getProperties().get(i).getName()+"\n");
+				System.out.print("For the following property:\n"+player.getProperties().get(i).getName()+" ("+player.getProperties().get(i).getPropType()+")\n");
 				if(player.getProperties().get(i).isMonopoly()) {
 					if(UserPrompts.buildHouse()) {
 						((TitleDeeds) player.getProperties().get(i)).addHouse();

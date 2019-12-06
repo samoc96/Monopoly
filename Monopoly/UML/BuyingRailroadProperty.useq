@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.3" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="gamesetup.PropActions" project="Monopoly" 
+    file="/Monopoly/src/gamesetup/PropActions.java" binary="false" label="propActions" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="32" y="0"/>    
+    <execution id="2">      
+      <position height="386" width="93" x="5" y="120"/>    
+    </execution>  
+  </object>  
+  <object id="21" language="java" name="playersetup.Player" project="Monopoly" 
+    file="/Monopoly/src/playersetup/Player.java" binary="false" label="player" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="509" y="0"/>    
+    <execution id="6">      
+      <position height="21" width="59" x="102" y="189"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="21" width="59" x="102" y="268"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="59" x="102" y="385"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="21" width="59" x="102" y="422"/>    
+    </execution>  
+  </object>  
+  <object id="22" language="java" name="codingtools.DisplayMessages" project="Monopoly" 
+    file="/Monopoly/src/codingtools/DisplayMessages.java" binary="false" label="displayMessages" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="169" y="0"/>    
+    <execution id="12">      
+      <position height="21" width="123" x="165" y="310"/>    
+    </execution>  
+  </object>  
+  <object id="23" language="java" name="propertysetup.Properties" project="Monopoly" 
+    file="/Monopoly/src/propertysetup/Properties.java" binary="false" label="properties" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="518" y="0"/>    
+    <execution id="4">      
+      <position height="21" width="83" x="292" y="141"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="21" width="83" x="292" y="236"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="21" width="83" x="292" y="347"/>    
+    </execution>  
+  </object>  
+  <object id="24" language="java" name="propertysetup.RailRoads" project="Monopoly" 
+    file="/Monopoly/src/propertysetup/RailRoads.java" binary="false" label="railRoads" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="526" y="0"/>    
+    <execution id="20">      
+      <position height="21" width="80" x="379" y="464"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="getPrice():int" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" operation="pay(double):void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="7" operation="setOwner(playersetup.Player):void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="9" operation="newProperty(propertysetup.Properties):void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="boughtProperty(propertysetup.Properties):void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="13" operation="getPropType():propertysetup.PropType" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="getNumOfRR():int" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" operation="setNumOfRR(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="setRailRoadRentPrice(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>
+</sequence-diagram>

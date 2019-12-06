@@ -1,7 +1,9 @@
 package codingtools;
 
-import java.util.InputMismatchException;
-
+import exception.PlayerNameException;
+import exception.PressEnterException;
+import exception.SetPlayerException;
+import exception.YesNoException;
 import propertysetup.Properties;
 /**
  * 
@@ -23,11 +25,11 @@ public class UserPrompts {
 					break;
 				}
 				else {
-					throw new InputMismatchException();
+					throw new SetPlayerException();
 				}
 			} 
-			catch(InputMismatchException e){
-				System.out.print("Reason for failure - " + e.getMessage()+"\nPlease input an integer between 2-6!\n");
+			catch(SetPlayerException setPlayerException){
+				System.out.print(setPlayerException.getMessage());
 			}
 		}
 		return playerNumber;
@@ -48,12 +50,12 @@ public class UserPrompts {
 					break;	
 				}
 				else {
-					throw new InputMismatchException();
+					throw new PlayerNameException();
 				}
 			}
 			
-			catch(InputMismatchException e){
-				System.out.print("Reason for failure - " + e.getMessage()+"\nPlease enter a string for the player's name!\n");
+			catch(PlayerNameException playerNameException){
+				System.out.print(playerNameException.getMessage());
 			}
 		}
 		return playerName;
@@ -77,12 +79,12 @@ public class UserPrompts {
 					break;	
 				}
 				else {
-					throw new InputMismatchException();
+					throw new PressEnterException();
 				}
 			}
 			
-			catch(InputMismatchException e){
-				System.out.print("Reason for failure - " + e.getMessage()+"\nPlease press the enter button!\n");
+			catch(PressEnterException pressEnterException){
+				System.out.print(pressEnterException.getMessage());
 			}
 		}
 		return pressedEnter;
@@ -177,11 +179,11 @@ public class UserPrompts {
 					break;
 				}
 				else {
-					throw new InputMismatchException();
+					throw new YesNoException();
 				}
 			}
-			catch(InputMismatchException e){
-				System.out.print("Reason for failure - " + e.getMessage()+"\nYou must enter either y or n!\n");
+			catch(YesNoException yesNoException){
+				System.out.print(yesNoException.getMessage());
 			}
 		}
 		return yesNo;

@@ -74,11 +74,11 @@ public class DisplayMessages {
 	 * @param properties
 	 */
 	public static void mortgageProp(Properties properties) {
-		System.out.print("The following property has been mortgaged:\n"+properties.getName()+"\n");
+		System.out.print("The following property has been mortgaged:\n"+properties.getName()+" ("+properties.getPropType()+")\n");
 		System.out.print("You will recieve: $"+properties.getMortgage()/2+"\n");
 	}
 	/**
-	 * Displays the plater's bank.
+	 * Displays the player's bank.
 	 * @param player
 	 */
 	public static void playersBank(Player player){
@@ -92,7 +92,7 @@ public class DisplayMessages {
 		System.out.println(player.getName()+" has the following current properties:\n");
 		int assetValue = 0;
 		for(int i=0; i < player.getNumOfProps(); i++) {
-			System.out.println(player.getProperties().get(i).getName()+"\n");
+			System.out.println(player.getProperties().get(i).getName()+" ("+player.getProperties().get(i).getPropType()+")\n");
 			assetValue += player.getProperties().get(i).getPrice();
 		}
 		System.out.println("Total Value of assets: $"+assetValue+"\n");
@@ -114,8 +114,12 @@ public class DisplayMessages {
 		
 	}
 	
-	public static void locationMessage(String location){
-		System.out.println("You have landed on:"+location);
+	public static void locationMessage(Properties properties){
+		System.out.println("You have landed on:"+properties.getName()+" ("+properties.getPropType()+")\n");
+	}
+	
+	public static void locationMessageNonProperty(String location){
+		System.out.println("You have landed on:"+location+"\n");
 	}
 	
 	public static void rolledMessage(int rolled){
@@ -136,7 +140,7 @@ public class DisplayMessages {
 	}
 	
 	public static void boughtProperty(Properties properties) {
-		System.out.print("Congrats! You have bought the property: "+properties.getName()+"\nThis cost you a total of: $"+properties.getPrice()+"\n");
+		System.out.print("Congrats! You have bought the property: "+properties.getName()+" ("+properties.getPropType()+")\nThis cost you a total of: $"+properties.getPrice()+"\n");
 	}
 	
 }
